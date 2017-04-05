@@ -1,0 +1,23 @@
+{
+  "name": "jmconsultorios",
+  "authors": [
+    "Caio <caio@magnificodigital.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-mask-plugin": "jquery-mask#^1.14.10",
+    "bootstrap": "^3.3.7",
+    "jquery.scrollTo": "^2.1.2"
+  }
+}
