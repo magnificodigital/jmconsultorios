@@ -38,16 +38,22 @@
 		<div class="box col-lg-4 center-x">
 			<h2>Entre em contato conosco!</h2>
 			<span class="closed"></span>
-			<div id="faz-bem-clinicas-formulario-de-contato-ec0e1f3fc893d9b4872c"></div><script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script><script type="text/javascript">new RDStationForms('faz-bem-clinicas-formulario-de-contato-ec0e1f3fc893d9b4872c-html', 'UA-47651710-1').createForm();</script>
-			<style type="text/css">
-				#form-faz-bem-clinicas-formulario-de-contato-ec0e1f3fc893d9b4872c *,
-				#conversion-form-faz-bem-clinicas-plano-smart-3d515aa7f8cd89cf97eb * {
-					font-family: 'Open Sans', sans-serif !important; }
-				#conversion-faz-bem-clinicas-formulario-de-contato-ec0e1f3fc893d9b4872c form input,
-				#conversion-faz-bem-clinicas-plano-smart-3d515aa7f8cd89cf97eb form input,
-				#conversion-faz-bem-clinicas-plano-smart-3d515aa7f8cd89cf97eb form option {background: #EEE !important; padding: 20px !important;}
+			<!--
+			<div id="faz-bem-clinicas-formulario-de-contato-ec0e1f3fc893d9b4872c"></div><script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script><script type="text/javascript">new RDStationForms('faz-bem-clinicas-formulario-de-contato-ec0e1f3fc893d9b4872c-html', 'UA-47651710-1').createForm();</script>-->
 
+			<div id="jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f"></div>
+			<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+			<script type="text/javascript">
+			  new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
+			</script>
+
+			<style type="text/css">
+				#conversion-jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f form input {
+					border: 0 !important;
+					background: #EEE !important;
+				}
 			</style>
+			
 		</div>
 		<div class="mask"></div>
 	</div>
