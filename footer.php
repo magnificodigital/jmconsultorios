@@ -144,12 +144,17 @@
 			$(window).scroll(function() { 
 				if ($(this).scrollTop() > altura) { 
 					nav.addClass("menu-fixed");
-					//$("nav#menu-site a.logo").css({'display':'block'}); 
 				} else { 
 					nav.removeClass("menu-fixed");
-					//$("nav#menu-site a.logo").css({'display':'none'}); 
-				} 
+				}
 			});
+
+			if ($(window).scrollTop() > altura) {
+				nav.addClass("menu-fixed");
+			} else {
+				nav.removeClass("menu-fixed");
+			}
+
 		}
 	});
 
