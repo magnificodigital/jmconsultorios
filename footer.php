@@ -1,3 +1,5 @@
+<?php if (!is_home() && !is_page('paciente')) : ?>
+
 <footer id="block-footer-site">
 	<div class="container">
 		<div class="row">			
@@ -32,6 +34,10 @@
 		<p>© 2017 - <?php bloginfo('name') ?> | <a href="<?php bloginfo('url') ?>/politica-de-privacidade/">Política de Privacidade</a></p>
 	</div>
 </div>
+
+<?php endif; ?>
+
+
 
 <div id="boxcontato" class="lightbox">
 	<div class="center-all">
@@ -69,7 +75,7 @@
 <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 <!--<script async type="text/javascript" src="<?php bloginfo('template_url') ?>/js/main.js"></script>-->
 
-<?php if (is_home()) { ?>
+<?php if (is_home() || is_front_page() || is_page('medicos') || is_page('paciente')) { ?>
 
 <script type="text/javascript" async>
 
@@ -240,7 +246,6 @@
   ga('send', 'pageview');
 </script>
 
-
 <?php if (is_page_template('page_vantagens.php')) : ?>
 
 	<script type="text/javascript">
@@ -272,7 +277,6 @@
 </script>
 
 <?php endif ?>
-
 
 </body>
 </html>

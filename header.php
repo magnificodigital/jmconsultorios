@@ -49,45 +49,42 @@
 
 <body <?php body_class() ?>>
 
-<?php if (is_home()) {
 
-	$linkhome = "#home";
-	$vantagens = "#vantagens";
-	$planos = "#planos";
+<?php if (!is_home()) : ?>
 
-} else {
-
-	$linkhome = get_bloginfo('url');
-	$vantagens = get_bloginfo('url')."/vantagens/";
-	$planos = get_bloginfo('url')."/#planos";
-
-} ?>
+<header id="block-header-site" <?php if (!is_home() && !is_page('medicos') && !is_page('paciente')) : ?> class="page" <?php endif; ?>>
 
 
-<header id="block-header-site" <?php if (!is_home()) : ?> class="page" <?php endif; ?>>
+<?php if (is_page('agendar-consulta')) : ?>
 
+	<div class="col-lg-3 col-md-3">
+		<a href="<?php echo get_bloginfo('url') ?>" class="link-logo"><h1 class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></h1></a>
+		<span class="menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></span>
+	</div>
+
+<?php else : ?>
 	<div class="container">
+
 		<div class="row">
 
 			<div class="col-lg-3 col-md-3">
-				<a href="<?php echo $linkhome ?>" class="link-logo"><h1 class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></h1></a>
+				<a href="<?php echo get_bloginfo('url') ?>" class="link-logo"><h1 class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></h1></a>
 				<span class="menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></span>
 			</div>
 
 			<div class="col-lg-9 col-md-9">
 				<nav class="menu-site">
-					<ul>
-						<li><a href="<?php bloginfo('url') ?>/quem-somos/">Quem Somos</a></li>
-						<li><a href="<?php echo $vantagens; ?>">Vantagens</a></li>
-						<!--<li><a href="#">Nossas Unidades</a></li>-->
-						<li><a href="<?php echo $planos; ?>">Planos</a></li>
-						<li><a href="<?php bloginfo('url') ?>/blog/">Blog</a></li>
-						<li><span class="open-contato">Contato</span></li>
-					</ul>
+					<?php get_template_part('menu') ?>
 				</nav>
 			</div>
 			
 		</div>
+
 	</div>
+<?php endif; ?>
+
 </header>
+<?php endif; ?>
+
+
 
