@@ -8,8 +8,6 @@ Author URI: http://magnificodigital.com
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
 
-/*BASE JM*/
-
 a:active,
 a:link,
 a:visited {color: #FFF; text-decoration: none;}
@@ -1050,7 +1048,11 @@ form button {width: 100%;}
 		&:hover {color: $azul !important;}
 	}
 
-	ul {/*padding-left: 0;*/list-style: url('../images/list_style2.png');}
+	ul {
+		list-style-image: url('../images/list_style2.png');
+		list-style-position: inside;
+	}
+	
 	ul li {
 		border-bottom: 1px solid #EEE;
 		margin-bottom: 10px;
