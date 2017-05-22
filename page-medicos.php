@@ -306,7 +306,7 @@
 												<li><p>Marketing e divulgação para trazer mais pacientes;</p></li>
 												<li><p>Segurança 24 horas;</p></li>
 											</ul>
-											<p><span>R$ 50,00/hora</span></p>
+											<p><span>R$ 55,00/hora</span></p>
 											<div class="mask"></div>
 										</div>
 
