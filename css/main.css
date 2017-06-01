@@ -50,7 +50,7 @@ img {
 
 .btn-site {
   color: #FFF;
-  background: #1dbcaa;
+  background: #00b597;
   padding-left: 50px;
   padding-right: 50px;
   border-radius: 0;
@@ -102,7 +102,7 @@ header#block-header-site {
     cursor: pointer;
     right: 20px;
     font-size: 24px;
-    background: #006b91;
+    background: #0875aa;
     padding: 5px 10px; }
     header#block-header-site .menu-mobile i {
       font-family: "FontAwesome" !important; }
@@ -110,7 +110,7 @@ header#block-header-site {
       header#block-header-site .menu-mobile {
         display: inherit; } }
   header#block-header-site.page {
-    background: #006b91;
+    background: #0875aa;
     position: fixed; }
     @media (max-width: 768px) {
       header#block-header-site.page {
@@ -160,7 +160,7 @@ header#block-header-site {
       header#block-header-site nav.menu-site ul li span {
         width: 100%;
         display: block;
-        background: #006b91;
+        background: #0875aa;
         color: #FFF !important;
         padding: 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2); } }
@@ -174,7 +174,7 @@ header#block-header-site {
       box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.06); }
       header#block-header-site nav.menu-site ul li a,
       header#block-header-site nav.menu-site ul li span {
-        color: #006b91;
+        color: #0875aa;
         opacity: 1; }
       header#block-header-site h1.block-logo {
         background: url("../images/logo.svg") no-repeat top; } }
@@ -188,7 +188,7 @@ header#block-header-site.menu-fixed {
   box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.06); }
   header#block-header-site.menu-fixed nav.menu-site ul li a,
   header#block-header-site.menu-fixed nav.menu-site ul li span {
-    color: #006b91;
+    color: #0875aa;
     opacity: 1; }
   header#block-header-site.menu-fixed h1.block-logo {
     background: url("../images/logo.svg") no-repeat top; }
@@ -228,7 +228,7 @@ section#home .owl-theme .owl-dots .owl-dot span {
   width: 30px;
   height: 8px;
   opacity: 0.5;
-  background: #1dbcaa;
+  background: #00b597;
   border-radius: 0; }
 section#home .owl-theme .owl-dots .owl-dot.active span {
   background: #FFF; }
@@ -295,11 +295,11 @@ section#vantagens {
   section#vantagens article.content {
     text-align: center; }
     section#vantagens article.content h3 {
-      color: #1dbcaa;
+      color: #00b597;
       font-weight: 700;
       margin-bottom: 50px; }
     section#vantagens article.content p {
-      color: #006b91;
+      color: #0875aa;
       margin-top: 50px; }
     section#vantagens article.content img {
       transition: 0.8s;
@@ -315,10 +315,10 @@ section#vantagens {
     width: 30px;
     height: 8px;
     opacity: 0.5;
-    background: #006b91;
+    background: #0875aa;
     border-radius: 0; }
   section#vantagens .owl-theme .owl-dots .owl-dot.active span {
-    background: #1dbcaa; }
+    background: #00b597; }
   section#vantagens .owl-theme .owl-nav.disabled + .owl-dots {
     margin-top: -30px; }
     @media (max-width: 768px) {
@@ -332,7 +332,7 @@ section#vantagens2 {
   width: 100%;
   padding: 70px 0;
   display: none;
-  background: #1dbcaa;
+  background: #00b597;
   color: #FFF; }
   @media (max-width: 768px) {
     section#vantagens2 {
@@ -349,12 +349,12 @@ section#vantagens2 {
     section#vantagens2 header h2,
     section#vantagens2 header h2 a {
       font-weight: 700;
-      color: #006b91 !important; }
+      color: #0875aa !important; }
   section#vantagens2 article {
     width: 100%; }
 
 section#especialidades {
-  background: #006b91;
+  background: #0875aa;
   padding: 100px 0;
   color: #FFF; }
   section#especialidades header {
@@ -407,7 +407,7 @@ section#planos {
   section#planos .living-blocks {
     display: none; }
   section#planos .plano1 .item h4 {
-    color: #006b91; }
+    color: #0875aa; }
   section#planos span.hide {
     display: block;
     cursor: pointer;
@@ -424,7 +424,7 @@ section#planos {
     width: 30px;
     height: 8px;
     opacity: 0.5;
-    background: #006b91;
+    background: #0875aa;
     border-radius: 0; }
   section#planos .plan-block {
     text-align: center;
@@ -443,17 +443,17 @@ section#planos {
         padding: 25px; } }
   section#planos .plano1 {
     background: #FFFFFF;
-    color: #006b91; }
+    color: #0875aa; }
     section#planos .plano1 .item {
       color: #FFF; }
     section#planos .plano1 .living-blocks .block-link {
-      background: #1dbcaa;
+      background: #00b597;
       color: #FFF; }
   section#planos .plano2 {
     background: #0f8c7b;
     color: #FFF; }
   section#planos .plano3 {
-    background: #006b91;
+    background: #0875aa;
     color: #FFF; }
     section#planos .plano3 .living-blocks .block-content {
       background: #0f8c7b; }
@@ -461,7 +461,7 @@ section#planos {
     background: #003649;
     color: #FFF; }
     section#planos .plano4 .living-blocks .block-content {
-      background: #1dbcaa; }
+      background: #00b597; }
   section#planos h3 {
     font-weight: 700;
     margin-bottom: 20px;
@@ -503,7 +503,7 @@ section#planos {
     section#planos .living-blocks .block.active .block-link:after {
       background: transparent; }
     section#planos .living-blocks .block-content {
-      background: #006b91;
+      background: #0875aa;
       padding: 30px;
       position: relative;
       transition: 0.3s;
@@ -544,7 +544,7 @@ section#planos {
       display: block;
       background: #FFF;
       cursor: pointer;
-      color: #006b91;
+      color: #0875aa;
       text-transform: uppercase;
       text-align: center;
       font-weight: 700;
@@ -578,10 +578,10 @@ section#call-to-action_30days {
     font-weight: 700;
     margin-bottom: 35px; }
   section#call-to-action_30days h3 span, section#call-to-action_30days p span {
-    color: #1dbcaa;
+    color: #00b597;
     font-weight: 700; }
   section#call-to-action_30days h3, section#call-to-action_30days p {
-    color: #006b91; }
+    color: #0875aa; }
   section#call-to-action_30days p {
     margin-bottom: 100px; }
   @media (max-width: 543px) {
@@ -589,7 +589,7 @@ section#call-to-action_30days {
       margin: 50px 0; } }
 
 footer#block-footer-site {
-  background: #006b91;
+  background: #0875aa;
   padding: 50px 0;
   width: 100%;
   line-height: 33px;
@@ -696,7 +696,7 @@ footer#block-footer-site {
   .sub-footer p {
     margin-bottom: 0 !important; }
   .sub-footer a:hover {
-    color: #1dbcaa; }
+    color: #00b597; }
 
 .lightbox {
   position: fixed;
@@ -719,7 +719,7 @@ footer#block-footer-site {
       position: absolute;
       top: -10px;
       right: -10px;
-      background: url("../images/close.svg") #006b91 center no-repeat; }
+      background: url("../images/close.svg") #0875aa center no-repeat; }
       @media (max-width: 768px) {
         .lightbox .box .closed {
           top: 10px;
@@ -740,7 +740,7 @@ footer#block-footer-site {
   .lightbox h1, .lightbox h2, .lightbox h3, .lightbox h4, .lightbox h5, .lightbox h6 {
     font-weight: 700;
     text-align: center;
-    color: #1dbcaa;
+    color: #00b597;
     margin-bottom: 40px; }
 
 form {
@@ -798,7 +798,7 @@ form button {
   .sidebar-site h5,
   .sidebar-site h6 {
     /*font-weight: 700;*/
-    color: #1dbcaa; }
+    color: #00b597; }
   .content-page p,
   .content-post p,
   .sidebar-site p {
@@ -839,9 +839,9 @@ form button {
     font-weight: 400;
     font-size: 2.5rem; }
   .content-page .post-content h2 a {
-    color: #1dbcaa !important; }
+    color: #00b597 !important; }
   .content-page .post-content .read-more {
-    background: #006b91;
+    background: #0875aa;
     padding: 10px;
     font-size: 12px;
     transition: 0.3s;
@@ -869,7 +869,7 @@ form button {
 .content-post h2, .content-post h3, .content-post h4, .content-post h5, .content-post h6 {
   font-weight: 400; }
 .content-post a {
-  color: #1dbcaa; }
+  color: #00b597; }
 .content-post b {
   font-weight: 700; }
 @media (max-width: 480px) {
@@ -883,7 +883,7 @@ form button {
     font-size: 1.25rem; } }
 
 .vantagens_page {
-  background: #1dbcaa;
+  background: #00b597;
   color: #FFF; }
   .vantagens_page section {
     margin: 100px 0;
@@ -892,11 +892,11 @@ form button {
 
 .advantage-featured {
   width: 100%;
-  background: #1dbcaa; }
+  background: #00b597; }
   .advantage-featured header.content-page {
     text-align: center;
     width: 100%;
-    background: #006b91; }
+    background: #0875aa; }
     .advantage-featured header.content-page .featured-image {
       float: left;
       width: 100%;
@@ -918,7 +918,7 @@ form button {
     font-size: 18px;
     margin-top: 40px; }
   .advantage-featured section.content-page {
-    background: #1dbcaa;
+    background: #00b597;
     color: #FFFFFF; }
 
 .list-vantagens ul {
@@ -1054,7 +1054,7 @@ form button {
       display: block;
       font-family: Arial, sans-serif !important; }
     .breadcrumbs ol li:last-child a {
-      color: #1dbcaa !important; }
+      color: #00b597 !important; }
     .breadcrumbs ol li:last-child:after {
       content: ""; }
   .breadcrumbs:after {
@@ -1084,7 +1084,7 @@ form button {
   -moz-transition: 0.2s;
   -o-transition: 0.2s; }
   .sidebar-site a:hover {
-    color: #006b91 !important; }
+    color: #0875aa !important; }
 .sidebar-site ul {
   list-style-image: url("../images/list_style2.png");
   list-style-position: inside; }
@@ -1098,7 +1098,7 @@ form button {
   padding: 10px;
   text-align: center; }
 .sidebar-site #searchform input[type="submit"] {
-  background: #1dbcaa;
+  background: #00b597;
   color: #FFF;
   border: 0; }
   .sidebar-site #searchform input[type="submit"]:hover {
@@ -1231,7 +1231,7 @@ form button {
   .menu-wrapper .box-menu {
     width: 250px;
     padding: 30px;
-    background: #006b91; }
+    background: #0875aa; }
     .menu-wrapper .box-menu ul {
       list-style: none;
       list-style-position: inside;
@@ -1250,7 +1250,7 @@ form button {
         -o-transition: 0.5s; }
       .menu-wrapper .box-menu ul li a:hover,
       .menu-wrapper .box-menu ul li span:hover {
-        color: #1dbcaa; }
+        color: #00b597; }
   .menu-wrapper .logo-home {
     width: 160px;
     height: 38px;
