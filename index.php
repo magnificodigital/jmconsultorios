@@ -2,7 +2,7 @@
 
 <div class="menu-wrapper">
 	<div class="box-menu">
-		<a href="<?php bloginfo('url') ?>" class="logo-home"><?php bloginfo('name') ?></a>
+		<h1><a href="<?php bloginfo('url') ?>" class="logo-home" title="<?php bloginfo('name') ?>"><?php bloginfo('name') ?></a></h1>
 		<?php get_template_part('menu') ?>
 	</div>
 </div>
@@ -17,8 +17,8 @@
 						<div class="row">
 							<div class="col-md-5 col-sm-12 pull-right center-all">
 								<figure>
-									<h4>Olá</h4>
-									<h3>Doutor (a)</h3>
+									<h3>Olá</h3>
+									<h2>Doutor (a)</h2>
 									<p>Clique aqui e descubra novas oportunidades</p>
 								</figure>
 							</div>
@@ -33,8 +33,8 @@
 						<div class="row">
 							<div class="col-md-5 col-lg-offset-3 col-md-offset-6 col-sm-offset-5 center-all">
 								<figure>
-									<h4>Olá</h4>
-									<h3>Paciente</h3>
+									<h3>Olá</h3>
+									<h2>Paciente</h2>
 									<p>Clique aqui e agende agora mesmo sua consulta</p>
 								</figure>
 							</div>

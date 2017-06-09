@@ -32,7 +32,8 @@
 									
 									<div class="post-thumbnail col-lg-5 col-md-12 col-sm-12">
 										<a href="<?php the_permalink(); ?>">
-											<?php the_post_thumbnail('blog-post') ?>
+											<?php the_post_thumbnail('blog-post',array( 'title' => get_the_title() , 'alt' => get_the_title() )) ?>
+
 										</a>
 									</div>
 								

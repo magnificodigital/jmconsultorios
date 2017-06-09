@@ -6,9 +6,10 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
 
-			<?php get_template_part('breadcrumbs') ?>
+		<?php get_template_part('breadcrumbs'); ?>
+	
+		<div class="row">
 
 			<section class="content-post col-lg-9 col-md-9 col-sm-12 col-xs-12">
 

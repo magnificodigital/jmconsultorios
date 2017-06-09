@@ -34,7 +34,8 @@ a:hover {
   text-decoration: none; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: auto; }
 
 /*LAYOUT*/
 .center-x {
@@ -79,8 +80,8 @@ header#block-header-site {
   -moz-transition: 0.5s;
   -o-transition: 0.5s; }
   header#block-header-site h1.block-logo {
-    width: 212px;
-    height: 49px;
+    width: 120px;
+    height: 54px;
     background: url("../images/logo-branco.svg") no-repeat top;
     text-indent: -9999px;
     margin-top: 0;
@@ -599,7 +600,7 @@ footer#block-footer-site {
     color: #FFF; }
   footer#block-footer-site .logo-footer {
     width: 160px;
-    height: 38px;
+    height: 40px;
     display: block;
     background: url("../images/logo-footer.svg") no-repeat top;
     text-indent: -9999px;
@@ -890,6 +891,22 @@ form button {
     height: auto;
     display: block; }
 
+.vantagens_page .breadcrumbs,
+.advantage-featured .breadcrumbs,
+.featured-content .breadcrumbs {
+  border-bottom: 0 !important;
+  text-align: center; }
+  .vantagens_page .breadcrumbs a, .vantagens_page .breadcrumbs span,
+  .advantage-featured .breadcrumbs a,
+  .advantage-featured .breadcrumbs span,
+  .featured-content .breadcrumbs a,
+  .featured-content .breadcrumbs span {
+    color: #FFF; }
+  .vantagens_page .breadcrumbs .current,
+  .advantage-featured .breadcrumbs .current,
+  .featured-content .breadcrumbs .current {
+    color: #FFF !important; }
+
 .advantage-featured {
   width: 100%;
   background: #00b597; }
@@ -1035,29 +1052,14 @@ form button {
   .breadcrumbs p {
     margin-right: 15px;
     margin-bottom: 0 !important; }
-  .breadcrumbs p,
-  .breadcrumbs ol {
-    float: left; }
   .breadcrumbs a {
-    color: #555; }
-  .breadcrumbs ol {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0; }
-  .breadcrumbs ol li {
-    float: left;
-    margin-right: 15px; }
-    .breadcrumbs ol li:after {
-      content: ">";
-      float: right;
-      margin-left: 15px;
-      display: block;
-      font-family: Arial, sans-serif !important; }
-    .breadcrumbs ol li:last-child a {
-      color: #00b597 !important; }
-    .breadcrumbs ol li:last-child:after {
-      content: ""; }
-  .breadcrumbs:after {
+    color: #555;
+    margin-right: 10px; }
+  .breadcrumbs .delimiter {
+    margin-right: 10px; }
+  .breadcrumbs .current {
+    color: #00b597 !important; }
+  .breadcrumbs p, .breadcrumbs:after {
     clear: both;
     content: "";
     display: block; }
@@ -1194,14 +1196,14 @@ form button {
     @media (max-width: 767px) {
       #homesite .col-paciente figure {
         margin-top: 160px; } }
-  #homesite figure h3, #homesite figure h4 {
+  #homesite figure h2, #homesite figure h3 {
     margin: 0;
     display: block;
     font-weight: 700;
     text-transform: uppercase; }
-  #homesite figure h3 {
+  #homesite figure h2 {
     font-size: 36px; }
-  #homesite figure h4 {
+  #homesite figure h3 {
     font-size: 24px; }
   #homesite figure p {
     margin-top: 20px;
@@ -1253,7 +1255,7 @@ form button {
         color: #00b597; }
   .menu-wrapper .logo-home {
     width: 160px;
-    height: 38px;
+    height: 40px;
     display: block;
     background: url("../images/logo-footer.svg") no-repeat top;
     text-indent: -9999px;
@@ -1265,5 +1267,8 @@ form button {
     -o-transition: 0.3s; }
     .menu-wrapper .logo-home:hover {
       opacity: 0.70; }
+
+#related-posts .related-post {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=main.css.map */

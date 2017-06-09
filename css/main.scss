@@ -44,7 +44,7 @@ body {
 h1, h2, h3, h4, h5, h6 {/*letter-spacing: 2px;*/}
 p {letter-spacing: 0.5px;}
 a:hover {text-decoration: none;}
-img {max-width: 100%}
+img {max-width: 100%; height: auto;}
 
 /*LAYOUT*/
 
@@ -113,8 +113,8 @@ header#block-header-site {
 	@include transicao(0.5s);
 
 	h1.block-logo {
-		width: 212px;
-		height: 49px;
+		width: 120px;
+		height: 54px;
 		//background: url('../images/sprites.png') no-repeat top;
 		background: url('../images/logo-branco.svg') no-repeat top;
 		text-indent: -9999px;
@@ -593,7 +593,7 @@ footer#block-footer-site {
 
 	.logo-footer {
 		width: 160px;
-		height: 38px;
+		height: 40px;
 		display: block;
 		//background: url('../images/sprites.png') no-repeat 0 -129px;
 		background: url('../images/logo-footer.svg') no-repeat top;
@@ -844,6 +844,19 @@ form button {width: 100%;}
 	section {margin: 100px 0; height: auto; display: block;}
 }
 
+.vantagens_page,
+.advantage-featured,
+.featured-content {
+	.breadcrumbs {
+		border-bottom: 0 !important;
+		text-align: center;
+		a, span {color: #FFF;}
+		.current {
+			color: #FFF !important;
+		}
+	}
+}
+
 .advantage-featured {
 	width: 100%;
 	background: $verde;
@@ -1000,9 +1013,11 @@ form button {width: 100%;}
 	display: block;
 	$espaco: 15px;
 	p {margin-right: $espaco; margin-bottom: 0 !important;}
+	a {color: #555; margin-right: 10px;}
+	.delimiter {margin-right: 10px;}
+	.current {color: $verde !important;}
 	p,
-	ol {float: left;}
-	a {color: #555;}
+	/*ol {float: left;}
 	ol {list-style: none; padding-left: 0; margin-bottom: 0;}
 	ol li {
 		float: left;
@@ -1018,7 +1033,7 @@ form button {width: 100%;}
 			a {color: $verde !important;}
 			&:after {content: "";}
 		}
-	}
+	}*/
 
 	&:after {clear: both; content: ""; display: block;}
 
@@ -1158,15 +1173,15 @@ form button {width: 100%;}
 	}
 
 	figure {
-		h3, h4 {
+		h2, h3 {
 			margin: 0;
 			display: block;
 			font-weight: 700;
 			text-transform: uppercase;
 		}
 
-		h3 {font-size: 36px;}
-		h4 {font-size: 24px;}
+		h2 {font-size: 36px;}
+		h3 {font-size: 24px;}
 		p {margin-top: 20px; font-size: 16px;}
 
 	}
@@ -1229,7 +1244,7 @@ form button {width: 100%;}
 
 	.logo-home {
 		width: 160px;
-		height: 38px;
+		height: 40px;
 		display: block;
 		background: url('../images/logo-footer.svg') no-repeat top;
 		text-indent: -9999px;
@@ -1239,4 +1254,10 @@ form button {width: 100%;}
 		&:hover {opacity: 0.70;}
 	}
 
+}
+
+#related-posts {
+	.related-post {
+		margin-top: 20px;
+	}
 }

@@ -4,37 +4,19 @@
 <head>
 
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="
-		<?php
-			if (is_home()) {
-				echo get_bloginfo('description');
-			} else {
-				echo get_the_title();
-			} 
-		?>
-	">
-
-	<meta name="keyword" content="jm consultorios compartilhados locacao">
 
 	<title>
-		<?php if (is_home() || is_404()) {
-			echo $nome;
-		} elseif (is_category()) {
-			$categoria = get_the_category();
-			$id_categoria = $categoria[0]->cat_ID;
-			echo get_cat_name($id_categoria)." | ".get_bloginfo('name');
-		} else {
-			$titulo = get_the_title();
-			if (is_single()) {
-				echo $titulo." | Blog | ".get_bloginfo('name');
+		<?php 
+			if (is_404()) {
+				echo "Erro 404! Página não encontrada | ".get_bloginfo('name');
 			} else {
-				echo $titulo." | ".get_bloginfo('name');
-			}
-		} ?>
- 	</title>
+				wp_title();
+			} ?>
+	</title>	
 
+	<?php wp_head() ?>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -43,9 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/assets/style.min.css">
-	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.svg" type="image/x-icon">
-
-	<?php wp_head() ?>
+	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.png" type="image/x-icon">
 
 </head>
 

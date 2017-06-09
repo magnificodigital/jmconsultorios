@@ -644,13 +644,7 @@
 
 				<h2>Insira seus dados e selecione o plano que combina com você</h2>
 				<span class="closed"></span>
-
 				<div id="jm-consultorios-planos-79a38ffce6f9ce331547"></div>
-				<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
-				<script type="text/javascript">
-				  new RDStationForms('jm-consultorios-planos-79a38ffce6f9ce331547-html', 'UA-47651710-1').createForm();
-				</script>
-				
 			</div>
 			<div class="mask"></div>
 		</div>

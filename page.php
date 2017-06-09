@@ -7,7 +7,7 @@
 
 			<section class="content-page col-lg-7 col-md-9 col-sm-12 center-x">
 
-				<?php get_template_part('breadcrumbs') ?>
+				<?php get_template_part('breadcrumbs'); ?>
 
 				<?php if(have_posts()): ?>
 				<?php while(have_posts()):the_post(); ?>
