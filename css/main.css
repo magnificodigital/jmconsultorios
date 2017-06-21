@@ -1019,7 +1019,7 @@ form button {
   background-attachment: fixed !important; }
   @media (max-width: 768px) {
     .bgParallax {
-      background-attachment: inherit; } }
+      background-attachment: inherit !important; } }
 
 .customize-support header#block-header-site.menu-fixed, .customize-support header#block-header-site.page {
   top: 32px; }
