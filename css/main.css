@@ -838,7 +838,8 @@ form button {
   .content-page .post-content h2 {
     margin-bottom: 20px;
     font-weight: 400;
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    margin-top: 0; }
   .content-page .post-content h2 a {
     color: #00b597 !important; }
   .content-page .post-content .read-more {
