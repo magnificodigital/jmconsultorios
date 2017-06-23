@@ -27,18 +27,24 @@
 					<section id="posts-blog">
 						<div class="container-fluid">
 
-							<?php $args = array(
+							<?php
+
+							if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+                            elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+                            else { $paged = 1; }
+
+							$args = array(
 								'orderby' => 'date',
 								'order' => 'DESC',
-								'posts_per_page' => '10',
-								);
-							?>
-							<?php query_posts($args); ?>
+								'posts_per_page' => 10,
+								'paged'=>$paged,
+							);
 
+							global $loop;
+							$loop = new WP_query( $args ); ?>
 
-							<?php if(have_posts()): ?>
-							<?php while(have_posts()):the_post(); ?>
-
+							<?php if($loop->have_posts()): ?>
+							<?php while($loop->have_posts()):$loop->the_post(); ?>
 							
 								<article class="single-post row">
 									
@@ -70,9 +76,27 @@
 							<?php endwhile; ?>
 							<?php endif; ?>
 
+							<?php 
+							//echo $html;
+		                    $big = 999999999;
+		                    $p = array(
+	                            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	                            'format' => '?paged=%#%',
+	                            'current' => max( 1, get_query_var('paged') ),
+	                            'total' => $loop->max_num_pages
+	                        );
+
+		                    echo '<div class="navigation">'.paginate_links($p).'</div>';
+
+		                    wp_reset_query();
+
+		                    ?>
 
 						</div>
 					</section>
+
+
+
 			</section>
 
 			<?php get_sidebar(); ?>

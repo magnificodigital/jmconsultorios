@@ -1272,4 +1272,51 @@ form button {
 #related-posts .related-post {
   margin-top: 20px; }
 
+.navigation:after {
+  content: "";
+  clear: both; }
+.navigation span,
+.navigation a {
+  margin-right: 5px;
+  color: #999;
+  padding-left: 5px;
+  min-width: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+  float: left;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s; }
+  .navigation span:after,
+  .navigation a:after {
+    margin-top: 5px;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #00b597;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s; }
+  .navigation span:hover:after,
+  .navigation a:hover:after {
+    width: 100%; }
+.navigation .current,
+.navigation a:hover {
+  color: #00b597; }
+  .navigation .current:after,
+  .navigation a:hover:after {
+    width: 100%; }
+
+.tags {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #EEE; }
+
+.author {
+  color: #999;
+  font-size: 12px; }
+
 /*# sourceMappingURL=main.css.map */

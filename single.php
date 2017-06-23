@@ -26,6 +26,16 @@
 					<?php the_content(); ?>
 				</div>
 
+				<div class="tags">
+					<?php the_tags(); ?>
+				</div>
+
+				<?php /*
+				<div class="author">
+					Postado por: <?php the_author(); ?>
+				</div>
+				*/ ?>
+
 
 				<?php endwhile; ?>
 				<?php endif; ?>

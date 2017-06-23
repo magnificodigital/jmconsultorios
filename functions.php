@@ -92,7 +92,7 @@ function wp_custom_breadcrumbs() {
       echo $before . 'categoria "' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+      echo $before . 'Resultados para"' . get_search_query() . '"' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -151,15 +151,15 @@ function wp_custom_breadcrumbs() {
       if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  
     } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+      echo $before . 'Tag "' . single_tag_title('', false) . '"' . $after;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+      echo $before . 'Artigos postados por ' . $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
+      echo $before . 'Erro 404' . $after;
     }
  
     if ( get_query_var('paged') ) {

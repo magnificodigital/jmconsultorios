@@ -1266,3 +1266,49 @@ form button {width: 100%;}
 		margin-top: 20px;
 	}
 }
+
+.navigation {
+	&:after {
+		content: "";
+		clear: both;
+	}
+	span,
+	a {
+		margin-right: 5px;
+		color: #999;
+		padding-left: 5px;
+		min-width: 20px;
+		text-align: center;
+		padding-bottom: 10px;
+		float: left;
+		@include transicao(0.2s);
+		&:after {
+			margin-top: 5px;
+			content: "";
+			display: block;
+			height: 2px;
+			width: 0;
+			background: $verde;
+			@include transicao(0.2s);
+		}
+		&:hover:after {
+			width: 100%;
+		}
+	}
+	.current,
+	a:hover {
+		color: $verde;
+		&:after {width: 100%;}
+	}
+}
+
+.tags {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #EEE;
+}
+
+.author {
+	color: #999;
+	font-size: 12px;
+}
