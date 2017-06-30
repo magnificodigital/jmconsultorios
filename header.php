@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/assets/style.min.css">
 	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="http://magnificodigital.com/assets/createdby/createdby.css" />
 
 	<?php wp_head() ?>
 
