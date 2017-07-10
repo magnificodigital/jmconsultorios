@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>
@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/assets/style.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/main.css">
 	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.png" type="image/x-icon">
 	<link rel="stylesheet" href="http://magnificodigital.com/assets/createdby/createdby.css" />
 
@@ -50,12 +50,12 @@
 
 		<div class="row">
 
-			<div class="col-lg-3 col-md-3">
+			<div class="col-lg-3 col-md-3 col-sm-3">
 				<a href="<?php echo get_bloginfo('url') ?>" class="link-logo"><h1 class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></h1></a>
 				<span class="menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></span>
 			</div>
 
-			<div class="col-lg-9 col-md-9">
+			<div class="col-lg-9 col-md-9 col-sm-9">
 				<nav class="menu-site">
 					<?php get_template_part('menu') ?>
 				</nav>

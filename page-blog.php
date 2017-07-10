@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<main id="content" style="">
+<main id="content">
 
-	<div class="full-width-thumbnail bgParallax blog" data-speed="4" style="background-image: url('<?php bloginfo('template_url') ?>/images/banner-blog.jpg');"></div>
+	<?php get_template_part('header','wrapper'); ?>
 
 	<div class="container top-box-newsletter">
 		<div class="row">

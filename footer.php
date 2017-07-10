@@ -58,7 +58,6 @@
 
 <?php wp_footer(); ?>
 
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
@@ -74,7 +73,7 @@
 
 <?php if (is_home() || is_front_page() || is_page('medicos') || is_page('paciente')) { ?>
 
-<script type="text/javascript" async>
+<script type="text/javascript">
 
 	$(document).ready(function(){
 
@@ -109,7 +108,6 @@
 	});
 
 	$(document).ready(function(){
-
 		$(".living-blocks .owl-carousel").owlCarousel({
 			dots: false,
 			nav: false,
@@ -243,42 +241,12 @@
   ga('send', 'pageview');
 </script>
 
-<?php if (is_page_template('page_vantagens.php')) : ?>
-
-	<script type="text/javascript">
-	//Menu
-	$(document).ready(function(){
-
-		if ($(window).width() > 768) {
-			var nav = $('header#block-header-site');
-			var navaltura = $(nav).outerHeight();
-			var altura = $('header.content-page').outerHeight();
-
-			nav.css({'background':'none'});
-			nav.removeClass("menu-fixed");
-
-			altura = altura - navaltura - 2;  //evita que na seção "vantagens" o menu suma
-
-			$(window).scroll(function () { 
-				if ($(this).scrollTop() > altura) { 
-					nav.addClass("menu-fixed");
-					nav.css({'background':'#FFF'}); 
-				} else { 
-					nav.css({'background':'none'});
-					nav.removeClass("menu-fixed");
-				} 
-			});
-		}
-		
-	});
-</script>
-
-<?php endif; ?>
+</body>
+</html>
 
 
 <style type="text/css">
 
-			
 	#form-container-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 #conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section {padding: 0px !important;}
 	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 {background: none !important;}
 	#form-container-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 * {font-family: 'Open Sans', sans-serif !important;}
@@ -340,8 +308,4 @@
 		background: #EEE !important;
 	}
 
-
 </style>
-
-</body>
-</html>

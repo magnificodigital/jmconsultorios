@@ -24,9 +24,6 @@ body {
   padding: 0;
   position: relative; }
 
-h1, h2, h3, h4, h5, h6 {
-  /*letter-spacing: 2px;*/ }
-
 p {
   letter-spacing: 0.5px; }
 
@@ -111,11 +108,18 @@ header#block-header-site {
       header#block-header-site .menu-mobile {
         display: inherit; } }
   header#block-header-site.page {
-    background: #0875aa;
-    position: fixed; }
-    @media (max-width: 768px) {
-      header#block-header-site.page {
-        background: #FFF; } }
+    background: #FFF;
+    position: fixed;
+    top: inherit;
+    -webkit-box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.06);
+    -moz-box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 5px 27px 0px rgba(0, 0, 0, 0.06); }
+    header#block-header-site.page nav.menu-site ul li a,
+    header#block-header-site.page nav.menu-site ul li span {
+      color: #0875aa;
+      opacity: 1; }
+    header#block-header-site.page h1.block-logo {
+      background: url("../images/logo.svg") no-repeat top; }
   header#block-header-site nav.menu-site ul {
     padding-left: 0;
     list-style: none;
@@ -301,7 +305,8 @@ section#vantagens {
       margin-bottom: 50px; }
     section#vantagens article.content p {
       color: #0875aa;
-      margin-top: 50px; }
+      margin-top: 50px;
+      font-size: 16px; }
     section#vantagens article.content img {
       transition: 0.8s;
       -webkit-transition: 0.8s;
@@ -922,15 +927,13 @@ form button {
       .advantage-featured header.content-page .featured-image img {
         max-width: 100%; }
     .advantage-featured header.content-page .featured-content {
-      margin-top: -250px; }
+      margin-top: -150px; }
       @media (max-width: 768px) {
         .advantage-featured header.content-page .featured-content {
-          margin-top: -200px; } }
+          margin-top: -100px; } }
   .advantage-featured header.content-page h1 {
     color: #FFFFFF;
     font-size: 2.5rem; }
-  .advantage-featured header.content-page img {
-    margin-bottom: 25px; }
   .advantage-featured header.content-page p {
     color: #FFF;
     font-size: 18px;
@@ -1321,5 +1324,11 @@ form button {
 
 .createdmagnifico {
   margin-top: 15px; }
+
+.page-agendar-consulta {
+  margin-top: 15px; }
+  @media (max-width: 782px) {
+    .page-agendar-consulta {
+      margin-top: 0; } }
 
 /*# sourceMappingURL=main.css.map */

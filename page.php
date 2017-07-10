@@ -2,10 +2,12 @@
 
 <main id="content">
 
+	<?php get_template_part('header','wrapper'); ?>
+
 	<div class="container">
 		<div class="row">
 
-			<section class="content-page col-lg-7 col-md-9 col-sm-12 center-x">
+			<section class="content-page col-lg-12 col-md-9 col-sm-12 center-x">
 
 				<?php get_template_part('breadcrumbs'); ?>
 

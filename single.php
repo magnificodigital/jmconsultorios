@@ -2,8 +2,7 @@
 
 <main id="content">
 
-	<div class="full-width-thumbnail bgParallax" data-speed="4" style="background-image: url(<?php the_post_thumbnail_url('full'); ?>); background-size: cover; background-position: center top">
-	</div>
+	<?php get_template_part('header','wrapper'); ?>
 
 	<div class="container">
 
