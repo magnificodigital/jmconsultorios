@@ -1,16 +1,11 @@
-/*
-
-Theme Name: JM Consultórios
-Author: Magnifico Digital
-Author URI: http://magnificodigital.com
-
-*/
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
 a:active,
 a:link,
-a:visited {color: #FFF; text-decoration: none;}
+a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
 
 $azul : #0875aa;
 $azulescuro : #003649;
@@ -31,8 +26,6 @@ $verdeclaro : #66c8bd;
 	align-items: center;
 }
 
-/*--------------------------------------------------------*/
-
 * {font-family: 'Open Sans', sans-serif;}
 html,
 body {
@@ -41,12 +34,13 @@ body {
 	padding: 0;
 	position: relative;
 }
-p {letter-spacing: 0.5px;}
+//p {letter-spacing: 0.5px;}
 a:hover {text-decoration: none;}
 img {max-width: 100%; height: auto;}
 
 /*LAYOUT*/
 
+.pointer {cursor: pointer;}
 .center-x {float: none !important; margin: 0 auto;}
 .center-all {
 	height: 100%;
@@ -69,9 +63,6 @@ img {max-width: 100%; height: auto;}
 	font-weight: 700;
 	&:hover {
 		color: #FFF;
-		-webkit-box-shadow: 0px 2px 0px 0px $verdeescuro;
-		-moz-box-shadow: 0px 2px 0px 0px $verdeescuro;
-		box-shadow: 0px 2px 0px 0px $verdeescuro;
 	}
 }
 
@@ -84,8 +75,8 @@ img {max-width: 100%; height: auto;}
 	box-shadow: 0px 5px 27px 0px rgba(0,0,0,0.06);
 	nav.menu-site ul li a,
 	nav.menu-site ul li span {color: $azul; opacity: 1;}
-	//h1.block-logo {background: url('../images/sprites.png') no-repeat 0 -50px;}
-	h1.block-logo {background: url('../images/logo.svg') no-repeat top;}
+	//.block-logo {background: url('../images/sprites.png') no-repeat 0 -50px;}
+	.block-logo {background: url('../images/logo.svg') no-repeat top;}
 }
 
 @mixin dots($cor1,$cor2){
@@ -111,14 +102,14 @@ header#block-header-site {
 	z-index: 500;
 	@include transicao(0.5s);
 
-	h1.block-logo {
+	.block-logo {
 		width: 120px;
 		height: 54px;
-		//background: url('../images/sprites.png') no-repeat top;
 		background: url('../images/logo-branco.svg') no-repeat top;
 		text-indent: -9999px;
 		margin-top: 0;
 		margin-bottom: 0;
+		display: table;
 		@include transicao(0.3s);
 		&:hover {opacity: 0.70;}
 		@media (max-width: 768px) {
@@ -128,14 +119,12 @@ header#block-header-site {
 
 	.menu-mobile {
 		display: none;
-		color: #FFF;
 		position: absolute;
-		top: 5px;
+		top: 10px;
 		cursor: pointer;
 		right: 20px;
 		font-size: 24px;
-		background: $azul;
-		padding: 5px 10px;
+		color: $azul;
 		i {font-family: "FontAwesome" !important;}
 		@media (max-width: 768px) {
 			display: inherit;
@@ -144,7 +133,6 @@ header#block-header-site {
 
 	&.page {
 		@include menufixo();
-		//@media (max-width: 768px) {background: #FFF;}
 	}
 
 	nav.menu-site {
@@ -176,6 +164,8 @@ header#block-header-site {
 			}	
 		}
 
+		&.ativa {display: block;}
+
 		@media (max-width: 768px) {
 
 			position: fixed;
@@ -190,10 +180,14 @@ header#block-header-site {
 			ul li span {
 				width: 100%;
 				display: block;
-				background: $azul;
-				color: #FFF !important;
+				background: #FFF;
+				color: $azul !important;
 				padding: 10px;
-				border-bottom: 1px solid rgba(255,255,255,0.2) ;
+				border-top: 1px solid #EEE;
+				@include transicao(0.3s);
+				&:hover {
+					background: #EEE;
+				}
 			}
 		}
 
@@ -209,8 +203,13 @@ header#block-header-site.menu-fixed {
 	@include menufixo();
 } 
 
-
 section#home {
+	&.paciente .btn-site {
+		background: $azul;
+		-webkit-box-shadow: 0px 4px 0px 0px $azulescuro;
+		-moz-box-shadow: 0px 4px 0px 0px $azulescuro;
+		box-shadow: 0px 4px 0px 0px $azulescuro;
+	}
 	@media (max-width: 480px) {
 		height: 500px !important;
 		/*margin-top: 90px;*/
@@ -220,12 +219,12 @@ section#home {
 		text-align: center;
 		margin: auto;
 		color: #FFF;
-		h2 {
-			font-size: 4.5rem;
+		h1, h2 {
+			font-size: 4.4rem;
 			@media (max-width: 768px) {font-size: 3.8rem;}
 			@media (max-width: 480px) {font-size: 2.2rem;}
 		}
-		h2, p {letter-spacing: 0;}
+		h1, h2, p {letter-spacing: 0;}
 		a.btn-site {
 			margin: 30px 0;
 			font-size: 2rem;
@@ -242,28 +241,18 @@ section#home {
 	.item {
 		display: block;
 		position: relative;
-		.mask {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: -moz-linear-gradient(-45deg, rgba(29,188,170,0.65) 0%, rgba(0,107,145,0.5) 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(-45deg, rgba(29,188,170,0.65) 0%,rgba(0,107,145,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(135deg, rgba(29,188,170,0.65) 0%,rgba(0,107,145,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a61dbcaa', endColorstr='#80006b91',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-		}
-
 		.bgSlide {
 			width: 100%;
 			height: 100%;
 			background-size: cover;
 			background-position: center top;
+			background-blend-mode: multiply;
+			background-color: $azul;
 			position: absolute;
 			top: 0;
-			transform: scale(1);
-			@include transicao(7s);
+    		&.first {
+    			background-blend-mode: normal; //deixa o primeiro padrão
+    		}
 		}
 	}
 }
@@ -341,7 +330,7 @@ section#vantagens2 {
 
 section#especialidades {
 	background: $azul;
-	padding: 100px 0;
+	padding: 70px 0;
 	color: #FFF;
 	header {text-align: center; /*margin-bottom: 30px;*/}
 	h4 {font-size: 28px; line-height: auto; margin-bottom: 0;}
@@ -363,11 +352,6 @@ section#especialidades {
 		color: #7caec3;
 	}
 
-}
-
-section#nossasunidades {
-	height: 100%;
-	display: none; //temp
 }
 
 section#planos {
@@ -418,7 +402,8 @@ section#planos {
 		padding: 50px;
 		display: block;
 		cursor: pointer;
-		
+
+		h3 {margin-top: 0}		
 		p {margin-bottom: 0;}
 
 		@media (max-width: 543px) {
@@ -698,53 +683,43 @@ footer#block-footer-site {
 	a:hover {color: $verde;}
 }
 
-.lightbox {
-	position: fixed;
+#boxcontato,
+#boxplanos {
 	display: none;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	.box {
-		z-index: 10000;
-		background: #FFF;
-		height: auto;
-		padding: 40px;
-		.closed {
-			width: 30px;
-			cursor: pointer;
-			height: 30px;
-			display: block;
-			position: absolute;
-			top: -10px;
-			right: -10px;
-			background: url('../images/close.svg') $azul center no-repeat;
-			@media (max-width: 768px) {top: 10px; right: 10px;}
-		}
-
-		@media (max-width: 768px) {
-			width: 100%;
-			height: 100%;
-			background: rgba(255,255,255,0.98);
-		}
-
-	}
-	.mask {
-		width: 100%;
-		height: 100%;
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background: rgba(0,0,0,0.75);
-	}
-
+	max-width: 500px;
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 700;
 		text-align: center;
 		color: $verde;
 		margin-bottom: 40px;
+	}
+}
+
+#boxdoutor {
+	text-align: left;
+	display: none;
+	max-width: 700px;
+	.btn {background: $azul; color: #FFF; outline: none;}
+	.name {font-size: 24px; color: #333;}
+	.espec {
+		color: $azul;
+		ul:after {content: ""; clear: both; display: block;}
+		ul {
+			padding-left: 0;
+		}
+		ul li {
+			list-style: none;
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	h1, h3, h3, h4, h5, h6 {
+		font-size: 18px;
+	}
+
+	@media (max-width: 768px) {
+		.espec {margin-top: 20px;}
 	}
 }
 
@@ -765,12 +740,11 @@ form button {width: 100%;}
 .content-page,
 .content-post,
 .sidebar-site {
-	/*padding-top: 30px;*/
 	padding-bottom: 30px;
-	h1 {font-weight: 700; margin-bottom: 20px;}
-	h2 {font-size: 24px;}
-	h1, h2, h3, h4, h5, h6 {/*font-weight: 700;*/ color: $verde;}
-	p {letter-spacing: 0; color: #555; font-size: 16px; line-height: 1.5;}
+	h1 {margin-bottom: 20px;}
+	h1, h2, h3, h4, h5, h6 {font-weight: 300;}
+	h2, h3, h4, h5, h6 {color: $verde;}
+	p {letter-spacing: 0; color: #555; font-size: 16px; line-height: 1.5; font-weight: 300}
 	ol, ul {padding-left: 0; list-style-position: inside;}
 }
 
@@ -801,19 +775,17 @@ form button {width: 100%;}
 
 		h2 {
 			margin-bottom: 20px;
-			font-weight: 400;
+			font-weight: 300;
 			font-size: 2.5rem;
 			margin-top: 0;
 		}
 		h2 a {color: $verde !important;}
 
 		.read-more {
-			background: $azul;
-			padding: 10px;
-			font-size: 12px;
+			color: $azul;
 			@include transicao(0.3s);
 			&:hover {
-				background: $azulescuro;
+				color: $azulescuro;
 			}
 		}
 	}
@@ -833,18 +805,25 @@ form button {width: 100%;}
 
 
 .content-post {
-	h1 {font-weight: 700;}
-	h2, h3, h4, h5, h6 {font-weight: 400;}
-	a {color: $verde;}
-	b {font-weight: 700;}
-	@media (max-width: 480px) {h1 {font-size: 2rem;} h2 {font-size: 1.5rem;} h3 {font-size: 1.50rem} h4 {font-size: 1.25rem;}}
+	a {color: $azul;}
+	/*@media (max-width: 480px) {
+		h1 {font-size: 2rem;}
+		h2 {font-size: 1.75rem;}
+		h3 {font-size: 1.5rem}
+		h4 {font-size: 1.25rem;}
+	}*/
 }
 
 
 .vantagens_page {
 	background: $verde;
 	color: #FFF;
-	section {margin: 100px 0; height: auto; display: block;}
+	section {margin: 70px 0; height: auto; display: block;}
+	h1 {
+		display: block;
+		text-align: center;
+		font-weight: 700;
+	}
 }
 
 .vantagens_page,
@@ -854,9 +833,8 @@ form button {width: 100%;}
 		border-bottom: 0 !important;
 		text-align: center;
 		a, span {color: #FFF;}
-		.current {
-			color: #FFF !important;
-		}
+		.current,
+		.breadcrumb_last {color: #FFF !important;}		 
 	}
 }
 
@@ -866,7 +844,8 @@ form button {width: 100%;}
 	header.content-page {
 		text-align: center;
 		width: 100%;
-		background: $azul;
+		background-color: $azul;
+		position: relative;
 		.featured-image {
 			float: left;
 			width: 100%;
@@ -875,10 +854,15 @@ form button {width: 100%;}
 		}
 
 		.featured-content {
+			padding-top: 100px;
+			@media (max-width: 768px) {
+				padding-top: 50px;
+			}
+		/*
 			margin-top: -150px;
 			@media (max-width: 768px) {
 				margin-top: -100px;
-			}
+			}*/
 		}
 	}
 	header.content-page h1 {color: #FFFFFF; font-size: 2.5rem;}
@@ -960,7 +944,9 @@ form button {width: 100%;}
 
 }
 
-.full-width-thumbnail {
+.full-width-thumbnail,
+#map_contato,
+#map_contato iframe {
 	width: 100%;
 	height: 400px;
 	display: block;
@@ -1018,7 +1004,8 @@ form button {width: 100%;}
 	p {margin-right: $espaco; margin-bottom: 0 !important;}
 	a {color: #555; margin-right: 10px;}
 	.delimiter {margin-right: 10px;}
-	.current {color: $verde !important;}
+	.current,
+	.breadcrumb_last {color: $azul;}
 	p,
 	/*ol {float: left;}
 	ol {list-style: none; padding-left: 0; margin-bottom: 0;}
@@ -1219,7 +1206,7 @@ form button {width: 100%;}
 	.box-menu {
 		width: 250px;
 		padding: 30px;
-		background: $azul;
+		background: #FFF;
 
 		ul {
 			list-style: none;
@@ -1230,7 +1217,7 @@ form button {width: 100%;}
 			li a,
 			li span {
 				text-transform: uppercase; 
-				color: #FFF; 
+				color: $azul; 
 				cursor: pointer;
 				@include transicao(0.5s);
 			}
@@ -1249,7 +1236,7 @@ form button {width: 100%;}
 		width: 160px;
 		height: 40px;
 		display: block;
-		background: url('../images/logo-footer.svg') no-repeat top;
+		background: url('../images/logo.svg') no-repeat top;
 		text-indent: -9999px;
 		margin: 0 auto;
 		margin-bottom: 30px;
@@ -1320,4 +1307,239 @@ form button {width: 100%;}
 	@media (max-width: 782px) {
 		margin-top: 0;
 	}
+}
+
+#specialists {
+
+	padding: 30px 0;
+	background: #EEE;
+
+	.especilidade {
+		min-height: 300px;
+		&:last-child {
+			border-bottom: 0;
+			margin-bottom: 0;
+		}
+		header {
+			min-height: 45px; 
+			margin-top: 20px;
+			@media (max-width: 768px) {
+				display: block;
+				text-align: center;
+			}
+		}
+		h2 {
+			font-weight: 300; 
+			font-size: 24px;
+			margin-bottom: 0; 
+			margin-top: 0;
+		}
+		p {margin-bottom: 0;}
+	}
+
+	.doutor {
+		text-align: center;
+		cursor: pointer;
+		background: #FFF;
+		padding-bottom: 20px;
+		max-width: 160px;
+		margin: 0 auto;
+		@include transicao(0.5s);
+		img {margin-bottom: 10px;}
+		&:hover {
+			-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.39);
+			-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.39);
+			box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.39);
+		}
+	}
+}
+
+#exibetelefone {
+	cursor: pointer;
+	margin-top: 10px;
+	text-align: center;
+	padding: 10px;
+	background: $azul;
+	color: #FFF;
+}
+
+#content-contato {
+	height: auto;
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+
+#header {
+	width: 100%;
+	display: block;
+	padding: 50px 0;
+	color: #FFF;
+	text-align: center;
+
+	h1 {
+		font-size: 48px;
+		margin: 0;
+		margin-top: 30px;
+		margin-bottom: 10px;
+		font-weight: 700;
+	}
+}
+
+#calltoaction p {
+	max-width: 600px;
+	margin: 0 auto;
+	display: block;
+	font-size: 18px;
+}
+
+.formWrapper {
+	text-align: center;
+	h2 {
+		color: #00b597;
+		margin-bottom: 30px;
+		font-size: 32px;
+	}
+}
+
+#content-contato-page {
+	width: 100%;
+	padding: 50px 0;
+	background: #FFF;
+}
+
+#slider {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+#slider .owl-nav {
+	position: absolute;
+	top: 40%;
+	left: 0;
+	width: 100%;
+}
+
+#slider .owl-nav .owl-prev {left: 10px; position: absolute;}
+#slider .owl-nav .owl-next {right: 10px; position: absolute;}
+
+#slider .owl-nav .owl-prev,
+#slider .owl-nav .owl-next {
+	background: none;
+	font-size: 24px;
+	opacity: 0.8;
+}
+
+#slider .owl-nav .owl-prev:hover,
+#slider .owl-nav .owl-next:hover {
+	opacity: 1;
+}
+
+#slider .owl-dots {margin-top: 10px}
+#slider .owl-dots .owl-dot.active span,
+#slider .owl-dots .owl-dot:hover span {
+	background: #00b597;
+}
+
+#depoimento {
+	color: #FFF;
+	padding: 40px 0;
+	text-align: center;
+	font-size: 18px;
+	font-style: italic;
+	background: rgba(0,0,0,0.5);
+}
+
+#lista-vantagens {
+	padding: 75px 0;
+	background: #FFF;
+	h2 {
+		display: block;
+		text-align: center;
+	}
+	.item-vantagem {
+		text-align: center;
+		display: block;
+		margin-top: 50px;
+		min-height: 170px;
+	}
+}
+
+@media (max-width: 768px) {
+	#header h1 {font-size: 28px;}
+	#calltoaction p {
+		font-size: 16px;
+	}
+
+	#slider {
+		height: auto;
+	}
+
+	#depoimento {
+		font-size: 16px;
+	}
+}
+
+#doctor-wrapper {
+	opacity: 0;
+	position: fixed;
+	bottom: -1px;
+	right: 40px;
+	z-index: 500;
+
+	&.animated {opacity: 1;}
+	@media (max-width: 543px) {
+		display: none;
+	}
+
+	#doctor-fixed {
+		width: 77px;
+		height: 101px;
+		background-image: url('../images/doutor.svg');
+		background-repeat: no-repeat;
+		z-index: 1;
+	}
+
+	#balao {
+		opacity: 0;
+		display: block;
+		position: absolute;
+		//background-image: url('../images/balao.svg');
+		background: #FFF;
+		padding: 10px;
+		padding-left: 20px;
+		left: -120px;
+		bottom: 10px;
+		z-index: -1;
+		width: 150px;
+		height: 60px;
+		font-size: 14px;
+		a {color: $azul;}
+		&.animated {
+			opacity: 1;
+		}
+	}
+
+	#close-box {
+		width: 15px;
+		height: 15px;
+		display: block;
+		background: url('../images/close.svg');
+		position: absolute;
+		cursor: pointer;
+		top: -7px;
+		left: -7px;
+	}
+}
+
+.galleria-theme-classic {
+	background: #EEE !important;
+}
+
+.galleria-theme-classic .galleria-thumbnails .galleria-image {
+	border: 1px solid #DDD !important;
 }

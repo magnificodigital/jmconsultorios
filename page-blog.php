@@ -63,7 +63,7 @@
 
 										<div class="content">
 											<?php the_excerpt(); ?>
-											<a href="<?php the_permalink(); ?>" class="read-more">Leia mais</a>
+											<a href="<?php the_permalink(); ?>" class="read-more">Leia mais <span class="fa fa-angle-right" aria-hidden="true"></span></a>
 										</div>
 
 									</div>

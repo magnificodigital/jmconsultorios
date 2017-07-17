@@ -1,12 +1,6 @@
 <?php 
 
-//adiciona script
-add_action('wp_enqueue_scripts', 'meu_tema_enqueue_scripts');
-function meu_tema_enqueue_scripts() {
-	wp_enqueue_script('scripts', get_template_directory_uri()."/assets/scripts.min.js", array('jquery'));
-	wp_localize_script('scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php'), 'outro_valor' => 1234));
-}
-
+require_once 'inc/class.taxonomy-single-term.php';
 
 //aumenta o resumo do blog
 function wpdocs_custom_excerpt_length( $length ) {
@@ -19,6 +13,10 @@ add_theme_support('post-thumbnails');
 add_image_size('single-post',1500,350,true);
 add_image_size('blog-post',450,338,true);
 add_image_size('related-post',95,95,true);
+
+//Para doutores
+add_image_size('doutor-page',160,160,true);
+add_image_size('doutor-box',210,300,true);
 
 //Registra sidebar
 function widgets_init() {
@@ -35,8 +33,6 @@ register_sidebar( array(
 } //finaliza widget "Sidebar 1"
 add_action( 'widgets_init', 'widgets_init' );
 /* finaliza sidebar */
-
-
 
 // Mover os scripts para o footer
 function remove_head_scripts() { 
@@ -64,112 +60,176 @@ function my_login_logo() { ?>
 
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+//Doutores
+$args = array(
+    'labels' => array(
+        'name' => __('Doutores'),
+        'singular_name' => __('Doutor'),
+        'menu_name' => 'Doutores',
+        'all_items' => 'Todos os doutores'
+    ),
+    'public' => true,
+    'rewrite' => array('slug' => 'doutor', 'with_front' => false),
+    'has_archive' => true,     
+    'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'),
+);    
 
-//Breadcrumbs
-function wp_custom_breadcrumbs() {
- 
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = '<span class="delimiter">&raquo;</span>'; // delimiter between crumbs
-  $home = '<i class="fa fa-home"></i>'; // text for the 'Home' link
-  $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span class="current">'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
- 
-  global $post;
-  $homeLink = get_bloginfo('url');
- 
-  if (is_home() || is_front_page()) {
- 
-    if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
- 
-  } else {
- 
-    echo '<nav class="breadcrumbs"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
- 
-    if ( is_category() ) {
-      $thisCat = get_category(get_query_var('cat'), false);
-      if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-      echo $before . 'categoria "' . single_cat_title('', false) . '"' . $after;
- 
-    } elseif ( is_search() ) {
-      echo $before . 'Resultados para"' . get_search_query() . '"' . $after;
- 
-    } elseif ( is_day() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('d') . $after;
- 
-    } elseif ( is_month() ) {
-      echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-      echo $before . get_the_time('F') . $after;
- 
-    } elseif ( is_year() ) {
-      echo $before . get_the_time('Y') . $after;
- 
-    } elseif ( is_single() && !is_attachment() ) {
-      if ( get_post_type() != 'post' ) {
-        $post_type = get_post_type_object(get_post_type());
-        $slug = $post_type->rewrite;
-        echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-      } else {
-        $cat = get_the_category(); $cat = $cat[0];
-        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-        //echo $cats; tirei a opção de exibir a categoria
-        echo '<a href="'.$homeLink.'/blog/">Blog</a>' . $delimiter;
-        if ($showCurrent == 1) echo $before . get_the_title() . $after;
-      }
- 
-    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-      $post_type = get_post_type_object(get_post_type());
-      echo $before . $post_type->labels->singular_name . $after;
- 
-    } elseif ( is_attachment() ) {
-      $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && !$post->post_parent ) {
-      if ($showCurrent == 1) echo $before . get_the_title() . $after;
- 
-    } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      for ($i = 0; $i < count($breadcrumbs); $i++) {
-        echo $breadcrumbs[$i];
-        if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
-      }
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
- 
-    } elseif ( is_tag() ) {
-      echo $before . 'Tag "' . single_tag_title('', false) . '"' . $after;
- 
-    } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo $before . 'Artigos postados por ' . $userdata->display_name . $after;
- 
-    } elseif ( is_404() ) {
-      echo $before . 'Erro 404' . $after;
-    }
- 
-    if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-    }
- 
-    echo '</nav>';
- 
-  }
-} // end wp_custom_breadcrumbs()
+register_post_type('doutor',$args);
 
+flush_rewrite_rules();
+
+$labels = array(
+    'name'              => __( 'Especialidades'),
+    'singular_name'     => __( 'Especialidade'),
+    'search_items'      => __( 'Procurar especialidade'),
+    'all_items'         => __( 'Todas especialidades'),
+    'parent_item'       => __( 'Especialidade pai'),
+    'parent_item_colon' => __( 'Parent Genre:'),
+    'edit_item'         => __( 'Editar especialidade'),
+    'update_item'       => __( 'Atualizar especialidade'),
+    'add_new_item'      => __( 'Adicionar nova especialidade'),
+    'new_item_name'     => __( 'Novo nome de especialidade'),
+    'menu_name'         => __( 'Especialidades'),
+);
+
+$args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'especialidade' ),
+);
+
+register_taxonomy( 'especialidade', array( 'doutor' ), $args );
+
+$labels = array(
+    'name'              => __( 'Gênero'),
+    'singular_name'     => __( 'Gênero'),
+    'search_items'      => __( 'Procurar gênero'),
+    'all_items'         => __( 'Todas os gêneros'),
+    'edit_item'         => __( 'Editar gênero'),
+    'update_item'       => __( 'Atualizar gênero'),
+    'add_new_item'      => __( 'Adicionar novo gênero'),
+    'menu_name'         => __( 'Gêneros')
+);
+
+$args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'genero' ),
+);
+
+register_taxonomy('genero', array( 'doutor' ), $args );
+$custom_tax_mb = new Taxonomy_Single_Term('genero', array('doutor'), 'radio');
+
+//meta boxes in single post pages
+$prefix = 'jm_'; 
+$meta_box = array(
+    'id' => 'my-meta-box',
+    'title' => 'Dados',
+    'page' => 'doutor', //show in listings custom post type only
+    'context' => 'normal',
+    'priority' => 'high',
+    'fields' => array(
+        array(
+            'name' => 'Número de Registro:',
+            'id' => $prefix . 'cr_doutor',
+            'type' => 'text',
+            'placeholder' => 'CRM-SP 999999'
+        ),
+    )
+);
+
+function mytheme_show_box() {
+    global $meta_box, $post; 
+    // Use nonce for verification
+    echo '<input type="hidden" name="mytheme_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';  
+    echo '<table class="form-table">';   
+    foreach ($meta_box['fields'] as $field)
+    {
+        // get current post meta data
+        $meta = get_post_meta($post->ID, $field['id'], true);    
+        echo '<tr>',
+        '<th style="width:20%"><label for="', $field['id'], '">', $field['name'], '</label></th>',
+        '<td>';
+        switch ($field['type']) {
+            case 'text':
+                echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" placeholder="', $field['placeholder'] ,'" />', '<br />', $field['desc'];
+            break;
+            case 'textarea':
+                echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '<br />', $field['desc'];
+            break;
+            case 'select':
+                echo '<select name="', $field['id'], '" id="', $field['id'], '">';
+                foreach ($field['options'] as $option) {
+                    echo '<option', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
+                }
+                echo '</select>';
+            break;
+            case 'radio':
+                foreach ($field['options'] as $option) {
+                    echo '<input type="radio" name="', $field['id'], '" value="', $option['value'], '"', $meta == $option['value'] ? ' checked="checked"' : '', ' />', $option['name'];
+                }
+            break;
+            case 'checkbox':
+                echo '<input type="checkbox" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />';
+            case 'file':
+                echo '<input type="file" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' "' : '', ' />';
+            break;
+        }
+        echo '<td>',
+        '</tr>';
+    }
+    echo '</table>';
+}
+function mytheme_save_data($post_id)
+{
+    global $meta_box; 
+    // verify nonce
+    if (!wp_verify_nonce($_POST['mytheme_meta_box_nonce'], basename(__FILE__))) {
+        return $post_id;
+    } 
+    // check autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return $post_id;
+    } 
+    // check permissions
+    if ('page' == $_POST['post_type'])
+    {
+        if (!current_user_can('edit_page', $post_id))
+        {
+            return $post_id;
+        }
+    } 
+    elseif (!current_user_can('edit_post', $post_id))
+    {
+        return $post_id;
+    }
+
+    foreach ($meta_box['fields'] as $field)
+    {
+        $old = get_post_meta($post_id, $field['id'], true);
+        $new = $_POST[$field['id']];
+
+        if ($new && $new != $old)
+        {
+            update_post_meta($post_id, $field['id'], $new);
+        }
+        elseif ('' == $new && $old)
+        {
+            delete_post_meta($post_id, $field['id'], $old);
+        }
+    }
+}
+function mytheme_add_box()
+{
+    global $meta_box; 
+    add_meta_box($meta_box['id'], $meta_box['title'], 'mytheme_show_box', $meta_box['page'], $meta_box['context'], $meta_box['priority']);
+}
+
+add_action('admin_menu', 'mytheme_add_box');
+add_action('save_post', 'mytheme_save_data');

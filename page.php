@@ -19,7 +19,23 @@
 				</header>
 
 				<div class="content">
-					<?php the_content(); ?>
+					<?php
+
+						if (is_page('contato')) : ?>
+
+						<div class="row">
+							<div class="col-md-6">
+								<?php the_content(); ?>
+								<span id="exibetelefone">Clique aqui para exibir o telefone</span>
+							</div>
+							<div class="col-md-6">
+								<div id="jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f"></div>
+							</div>
+						</div>
+						<?php else : 
+							the_content();
+						endif; ?>
+						
 				</div>
 
 				<?php endwhile; ?>
@@ -29,6 +45,12 @@
 
 		</div>
 	</div>
+
+	<?php 
+	if (is_page('quem-somos')) {
+		get_template_part('doutores');
+	} ?>
+
 </main>
 
 <?php get_footer(); ?>

@@ -7,41 +7,56 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>
-		<?php 
-			if (is_404()) {
-				echo "Erro 404! Página não encontrada | ".get_bloginfo('name');
-			} else {
-				wp_title();
-			} ?>
-	</title>	
+	
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<title><?php 
+		if (is_404()) {
+			$title = "Erro 404! Página não encontrada | ".get_bloginfo('name');
+		} else {
+			$title = wp_title();
+		}
+	?></title>	
+
+	<?php if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) : ?>
+
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/jquery.fancybox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/main.css">
-	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" href="http://magnificodigital.com/assets/createdby/createdby.css" />
 
-	<?php wp_head() ?>
+	<?php else: ?>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/assets/style.min.css">
+
+	<?php endif; ?>
+
+<?php if (is_page()) : ?>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/galleria/galleria.classic.css">
+<?php endif; ?>
+	
+	<link rel="stylesheet" href="http://magnificodigital.com/assets/createdby/createdby.css">
+	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.png">
+
+	<style type="text/css">
+		.scrolloff {pointer-events: none;}
+	</style>
+
+	<?php wp_head(); ?>
 
 </head>
 
-<body <?php body_class() ?>>
+<body <?php body_class(); ?>>
 
-
-<?php if (!is_home()) : ?>
-
-<header id="block-header-site" <?php if (!is_home() && !is_page('medicos') && !is_page('paciente')) : ?> class="page" <?php endif; ?>>
+<header id="block-header-site" <?php if (!is_home()) : ?> class="page" <?php endif; ?>>
 
 
 <?php if (is_page('agendar-consulta')) : ?>
 
 	<div class="col-lg-3 col-md-3">
-		<a href="<?php echo get_bloginfo('url') ?>" class="link-logo"><h1 class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></h1></a>
+		<a href="<?php echo get_bloginfo('url') ?>" title="<?php bloginfo('name'); ?>" class="link-logo"><div class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></div></a>
 		<span class="menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></span>
 	</div>
 
@@ -49,25 +64,21 @@
 	<div class="container">
 
 		<div class="row">
-
-			<div class="col-lg-3 col-md-3 col-sm-3">
-				<a href="<?php echo get_bloginfo('url') ?>" class="link-logo"><h1 class="block-logo" title="<?php echo $nome ?>"><?php echo $nome ?></h1></a>
+			<div class="col-lg-2 col-md-3 col-sm-3">
+				<a href="<?php echo get_bloginfo('url'); ?>" class="block-logo"></a>
 				<span class="menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></span>
 			</div>
-
-			<div class="col-lg-9 col-md-9 col-sm-9">
+			<div class="col-lg-10 col-md-9 col-sm-9">
 				<nav class="menu-site">
-					<?php get_template_part('menu') ?>
+					<?php get_template_part('menu'); ?>
 				</nav>
 			</div>
-			
 		</div>
 
 	</div>
 <?php endif; ?>
 
 </header>
-<?php endif; ?>
 
 
 

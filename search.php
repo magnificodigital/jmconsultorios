@@ -46,7 +46,7 @@
 
 										<div class="content">
 											<?php the_excerpt(); ?>
-											<a href="<?php the_permalink(); ?>" class="read-more">Leia mais</a>
+											<a href="<?php the_permalink(); ?>" class="read-more">Leia mais <span class="fa fa-angle-right" aria-hidden="true"></span></a>
 										</div>
 
 									</div>
@@ -58,6 +58,22 @@
 					
 							<?php endwhile; ?>
 							<?php endif; ?>
+
+							<?php
+							global $wp_query;
+							 
+							$big = 999999999; // need an unlikely integer
+
+							$p = array(
+	                            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+	                            'format' => '?paged=%#%',
+	                            'current' => max( 1, get_query_var('paged') ),
+	                            'total' => $wp_query->max_num_pages
+	                        );
+
+		                    echo '<div class="navigation">'.paginate_links($p).'</div>';
+							
+							?>
 
 
 						</div>

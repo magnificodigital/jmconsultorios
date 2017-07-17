@@ -1,11 +1,14 @@
 //diretorios a serem concatenados e minificados
 var scripts = [
-	'bower_components/jquery/dist/jquery.min.js',
-	'bower_components/jquery-mask-plugin/dist/jquery.mask.min.js',
-	'bower_components/jquery.scrollTo/jquery.scrollTo.min.js',
-	'js/**/*.js'
+	'js/jquery.js',
+	'js/jquery.scrollTo.js',
+	'js/jquery.fancybox.js',
+	'js/jquery.cookie.js',
+	'js/owl.carousel.js',
+	'js/swiper.jquery.js',
+	'js/swiper.js',
+	'js/main.js'
 ];
-
 var styles = ['css/**.css'];
 
 //inicia task
@@ -22,7 +25,7 @@ gulp.task('clean',function(){
 });
 
 gulp.task('jshint',function(){
-	return gulp.src(['js/**/*.js'])
+	return gulp.src(scripts)
 	.pipe(jshint())
 	//.pipe(jshint.reporter('default'));
 });
