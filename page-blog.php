@@ -11,7 +11,8 @@
 				<p>Assine para receber nossas novidades</p>
 			</div>
 			<div class="col-lg-9 col-md-9 col-sm-12 content-form">
-				<div id="jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7"></div>
+				<!--<div id="jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7"></div>-->
+				<div id="jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7"></div>
 			</div>
 		</div>
 	</div>

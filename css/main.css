@@ -1537,4 +1537,8 @@ form button {
 .galleria-theme-classic .galleria-thumbnails .galleria-image {
   border: 1px solid #DDD !important; }
 
+@media (max-width: 768px) {
+  .form-contato {
+    margin-top: 30px; } }
+
 /*# sourceMappingURL=main.css.map */

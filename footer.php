@@ -54,9 +54,10 @@
 
 <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
 <script type="text/javascript">
-	new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
- 	new RDStationForms('jm-consultorios-planos-79a38ffce6f9ce331547-html', 'UA-47651710-1').createForm();
- 	new RDStationForms('jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7-html', 'UA-47651710-1').createForm();
+	new RDStationForms('jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7-html', 'UA-47651710-1').createForm();
+	new RDStationForms('jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5-html', 'UA-47651710-1').createForm();
+	//new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
+ 	//new RDStationForms('jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7-html', 'UA-47651710-1').createForm();
 </script>
 <?php if (is_home() || is_front_page()) { ?>
 
@@ -177,66 +178,37 @@ if (is_page('quem-somos')) { ?>
 
 <style type="text/css">
 
-	#form-container-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 #conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section {padding: 0px !important;}
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 {background: none !important;}
-	#form-container-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 * {font-family: 'Open Sans', sans-serif !important;}
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field,
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions,
-	#conversion-modal-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 .modal-content section form div.field,
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions {float: left !important; width: 33% !important; padding: 0 !important;}
-	#form-container-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 #conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 #conversion-form-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 div.actions input.call_button {
-		padding: 8px !important;
-		background: #1dbcaa !important;
-		font-weight: 400 !important;
-		text-transform: uppercase !important;
+	#form-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 *,
+	#form-jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5 * {font-family: 'Open Sans', sans-serif !important;}
+
+	#form-container-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section,
+	#form-container-jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5 #conversion-jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5 section {
+		padding: 0 !important;
 	}
 
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field input,
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee72 section div.actions .call_button {
-		border: 0 !important;
-		border-radius: 0 !important;
+	#conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section input {
+		background: #EEEEEE !important;
+		border-radius: 0;
+		padding: 10px !important;
+		height: inherit !important;
 	}
 
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field input {background: #EEE !important; padding: 10px !important; height: inherit !important;}
-
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field,
-	#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions {
-		padding: 0 10px !important;
+	#conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.field, #conversion-modal-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 .modal-content section form div.field,
+	#conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions {
+		float: left !important;
+		width: 31% !important;
+		margin-right: 10px !important;
 	}
+	 #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions {
+	 	padding: 0 !important;
+	 }
 
-	@media (max-width: 768px) {
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field input,
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions .call_button {font-size: 14px !important;}
-
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field,
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions {padding: 0 5px !important}
-
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field,
-		#conversion-modal-faz-bem-clinicas-box-newsletter-19b0fcc13437fa976642 .modal-content section form div.field {
-			width: 50% !important;
-		}
-
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions {width: 100% !important; margin-top: 10px !important;}
-	}
-
-	@media (max-width: 543px) {
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field,
-		#conversion-modal-faz-bem-clinicas-box-newsletter-19b0fcc13437fa976642 .modal-content section form div.field {
-			width: 100% !important;
-			margin-bottom: 10px !important;
-		}
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions {margin-top: 0 !important;}
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.field input,
-		#conversion-jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7 section div.actions .call_button {
-			text-align: center !important;
-		}
-	}
-
-	#conversion-jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f form input {
-		border: 0 !important;
-		background: #EEE !important;
-	}
-
+	 #conversion-modal-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 .modal-content section div.actions .call_button, #conversion-modal-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 .modal-content section div.actions a.call_button, #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions .call_button, #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions a.call_button {
+ 	    padding: 8px !important;
+    	background: #1dbcaa !important;
+    	font-weight: 400 !important;
+    	text-transform: uppercase !important;
+	 }
 </style>
 
 </body>

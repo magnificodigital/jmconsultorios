@@ -52,8 +52,6 @@ $(function(){
 	});
 });
 
-
-
 $(document).ready(function(){
 
 	var intervalo = window.setInterval(function() {

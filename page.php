@@ -29,7 +29,10 @@
 								<span id="exibetelefone">Clique aqui para exibir o telefone</span>
 							</div>
 							<div class="col-md-6">
-								<div id="jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f"></div>
+								<div class="form-contato">
+									<div id="jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5"></div>
+									<!--<div id="jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f"></div>-->
+								</div>
 							</div>
 						</div>
 						<?php else : 
