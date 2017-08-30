@@ -59,16 +59,17 @@
 	//new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
  	//new RDStationForms('jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7-html', 'UA-47651710-1').createForm();
 </script>
-<?php if (is_home() || is_front_page()) { ?>
-
 <script type="text/javascript">
-
 	$(document).ready(function(){
 		$('.bloco-telefone').click(function(){
 			$(this).html('(11) 4858-1081');
 			$(this).removeClass('pointer');
 		});
 	}); 
+</script>
+<?php if (is_home() || is_front_page()) { ?>
+
+<script type="text/javascript">
 
 	$(document).ready(function(){
 
@@ -77,15 +78,32 @@
 		$('#home .owl-carousel').owlCarousel({
 			items: 1,
 			dots: true,
-			autoplay: true,
+			autoplay: false,
 			dotsSpeed: 1000,
 			autoplayTimeout: tempo,
-			loop: true,
+			loop: false,
 			responsiveClass:true,
 			smartSpeed:800,
 			mouseDrag: false,
 			animateIn: 'fadeIn',
 			animateOut: 'fadeOut'
+		});
+	});
+
+	$(document).ready(function(){
+
+		$('#photos-home .owl-carousel').owlCarousel({
+			items: 1,
+			dots: false,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			autoplayHoverPause: true,
+			autoplaySpeed: 750,
+			loop: true,
+			nav: true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			mouseDrag: true,
+			touchDrag: true,
 		});
 	});
 

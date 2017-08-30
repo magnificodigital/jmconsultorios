@@ -157,6 +157,7 @@ header#block-header-site {
 					font-size: 14px;
 					@include transicao(0.2s);
 					&:hover {opacity: 1}
+					&.underline {font-weight: 700; text-decoration: underline !important}
 				}
 
 				@media (max-width: 990px) {margin: 0 7px;}
@@ -1312,7 +1313,7 @@ form button {width: 100%;}
 #specialists {
 
 	padding: 30px 0;
-	background: #EEE;
+	//background: #EEE;
 
 	.especilidade {
 		min-height: 300px;
@@ -1518,6 +1519,9 @@ form button {width: 100%;}
 		width: 150px;
 		height: 60px;
 		font-size: 14px;
+		-webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.08);
+		-moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.08);
+		box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.08);
 		a {color: $azul;}
 		&.animated {
 			opacity: 1;
@@ -1546,4 +1550,56 @@ form button {width: 100%;}
 
 @media (max-width: 768px) {
 	.form-contato {margin-top: 30px;}
+}
+
+#photos-home {
+	width: 100%;
+	display: block;
+	position: relative;
+	background-color: #EEEEEE;
+	color: #777;
+
+	.col-md-6 {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	article {
+		padding: 60px;
+		h2 {color: $azul;}
+		a {
+			color: #FFF;
+			background-color: $verde;
+			padding: 10px 30px;
+		}
+		@media (max-width: 768px) {
+			padding: 30px;
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		bottom: 50%;
+		margin-bottom: -36px;
+		width: 100%;
+		display: block;
+		text-align: center;
+		.owl-prev,
+		.owl-next {
+			float: left;
+			font-size: 36px;
+			display: table;
+			margin-left: 20px;
+			color: #FFF;
+		}
+		.owl-next {
+			float: right;
+			margin-right: 20px;
+		}
+	}
+
+}
+
+.page-contato {
+	text-align: center;
 }
