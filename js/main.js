@@ -54,26 +54,31 @@ $(function(){
 
 $(document).ready(function(){
 
-	var intervalo = window.setInterval(function() {
-		$('#doctor-wrapper').addClass('animated bounceInRight');
-	}, 1000);
-	window.setTimeout(function() {
-	    clearInterval(intervalo);
-	}, 1500);
+	var caixa = localStorage.fechacaixa;
 
-	var intervalo2 = window.setInterval(function() {
-		$('#doctor-wrapper #balao').addClass('animated fadeIn');
-	}, 2000);
-	window.setTimeout(function() {
-	    clearInterval(intervalo2);
-	}, 2500);
+	if (!caixa) {
+		var intervalo = window.setInterval(function() {
+			$('#doctor-wrapper').addClass('animated bounceInRight');
+		}, 1000);
+		window.setTimeout(function() {
+		    clearInterval(intervalo);
+		}, 1500);
 
-	$('#doctor-wrapper #close-box').on('click',function(){
-		$('#doctor-wrapper').addClass('animated bounceOutRight');
-		intervalosaida = window.setInterval(function(){
-			$('#doctor-wrapper').removeClass('animated');
-		},1000);
-		//$.cookie('name', 'value', { expires: 7 });
-	});
+		var intervalo2 = window.setInterval(function() {
+			$('#doctor-wrapper #balao').addClass('animated fadeIn');
+		}, 2000);
+		window.setTimeout(function() {
+		    clearInterval(intervalo2);
+		}, 2500);
+
+		$('#doctor-wrapper #close-box').on('click',function(){
+			$('#doctor-wrapper').addClass('animated bounceOutRight');
+			intervalosaida = window.setInterval(function(){
+				$('#doctor-wrapper').removeClass('animated');
+			},1000);
+			localStorage.setItem('fechacaixa', true);
+		});
+		
+	}
 
 });
