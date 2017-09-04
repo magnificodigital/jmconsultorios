@@ -1,4 +1,4 @@
-<?php $nome = get_bloginfo('name'); ?>
+<?php $nome = get_bloginfo('name'); ob_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,8 +17,8 @@
 		}
 	?></title>	
 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<?php if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) : ?>
-
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/swiper.min.css">
@@ -27,10 +27,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/jquery.fancybox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/css/main.css">
-
 	<?php else: ?>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/assets/style.min.css">
-
 	<?php endif; ?>
 
 <?php if (is_page()) : ?>

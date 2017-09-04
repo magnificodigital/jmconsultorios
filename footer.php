@@ -231,3 +231,6 @@ if (is_page('quem-somos')) { ?>
 
 </body>
 </html>
+
+<?php $html = ob_get_clean ();
+echo preg_replace('/\s+/', ' ', $html); ?>
