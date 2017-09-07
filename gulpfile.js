@@ -18,6 +18,7 @@ var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
+var stripCssComments = require('gulp-strip-css-comments');
 
 gulp.task('clean',function(){
 	return gulp.src(['assets'])
@@ -39,9 +40,10 @@ gulp.task('uglify',['clean'],function(){ //pegar todos os js, minificar em um s√
 
 gulp.task('cssmin',['clean'], function(){
 	return gulp.src(styles)
-	.pipe(cleanCSS())
-	.pipe(concat('style.min.css'))
-	.pipe(gulp.dest('assets')); //leva os arquivos para outra pasta 
+		.pipe(cleanCSS())
+		.pipe(concat('style.min.css'))
+		.pipe(stripCssComments({all: true}))
+		.pipe(gulp.dest('assets')); //leva os arquivos para outra pasta 
 });
 
 gulp.task('default', ['jshint', 'uglify', 'cssmin']);
