@@ -706,33 +706,33 @@ footer#block-footer-site {
     color: #00b597;
     margin-bottom: 40px; }
 
-#boxdoutor {
+.boxdoutor {
   text-align: left;
   display: none;
   max-width: 700px; }
-  #boxdoutor .btn {
+  .boxdoutor .btn {
     background: #0875aa;
     color: #FFF;
     outline: none; }
-  #boxdoutor .name {
+  .boxdoutor .name {
     font-size: 24px;
     color: #333; }
-  #boxdoutor .espec {
+  .boxdoutor .espec {
     color: #0875aa; }
-    #boxdoutor .espec ul:after {
+    .boxdoutor .espec ul:after {
       content: "";
       clear: both;
       display: block; }
-    #boxdoutor .espec ul {
+    .boxdoutor .espec ul {
       padding-left: 0; }
-    #boxdoutor .espec ul li {
+    .boxdoutor .espec ul li {
       list-style: none;
       float: left;
       margin-right: 10px; }
-  #boxdoutor h1, #boxdoutor h3, #boxdoutor h3, #boxdoutor h4, #boxdoutor h5, #boxdoutor h6 {
+  .boxdoutor h1, .boxdoutor h3, .boxdoutor h3, .boxdoutor h4, .boxdoutor h5, .boxdoutor h6 {
     font-size: 18px; }
   @media (max-width: 768px) {
-    #boxdoutor .espec {
+    .boxdoutor .espec {
       margin-top: 20px; } }
 
 form {

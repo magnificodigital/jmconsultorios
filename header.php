@@ -7,8 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	
-
 	<title><?php 
 		if (is_404()) {
 			$title = "Erro 404! Página não encontrada | ".get_bloginfo('name');
@@ -63,7 +61,7 @@
 
 		<div class="row">
 			<div class="col-lg-2 col-md-3 col-sm-3">
-				<a href="<?php echo get_bloginfo('url'); ?>" class="block-logo"></a>
+				<a href="<?php echo get_bloginfo('url'); ?>" class="block-logo" title="<?php echo $nome; ?>"></a>
 				<span class="menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></span>
 			</div>
 			<div class="col-lg-10 col-md-9 col-sm-9">

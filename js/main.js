@@ -16,11 +16,12 @@ $(function(){
 $("[data-fancybox]").fancybox();
 
 //Doutores
+/*
 $(function(){
 	$('.doutor').on('click', function(){
 		//Troca o nome
 		var nome = $(this).find('.nome').text();
-		$('#boxdoutor .name').html(nome);
+		$('boxdoutor .name').html(nome);
 
 		//Troca o CRM
 		var cr = $(this).find('.cr').text();
@@ -43,7 +44,20 @@ $(function(){
 			type : 'inline',
 		});
 	});
+});*/
+
+
+$(function(){
+	$('.doutor').on('click',function(){
+		var id = $(this).data('id');
+		var destino = '#box-'+id+'';
+		$.fancybox.open({
+			src  : destino,
+			type : 'inline',
+		});
+	});
 });
+
 
 //Menu mobile
 $(function(){

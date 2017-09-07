@@ -39,7 +39,6 @@
 <?php wp_footer(); ?>
 
 <?php if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) : ?>
-
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquery.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquery.fancybox.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/jquery.scrollTo.js"></script>
@@ -47,7 +46,6 @@
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/swiper.jquery.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/swiper.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/main.js"></script>
-
 <?php else: ?>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/assets/scripts.min.js"></script>
 <?php endif; ?>
@@ -56,8 +54,8 @@
 <script type="text/javascript">
 	new RDStationForms('jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7-html', 'UA-47651710-1').createForm();
 	new RDStationForms('jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5-html', 'UA-47651710-1').createForm();
-	//new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
- 	//new RDStationForms('jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7-html', 'UA-47651710-1').createForm();
+	/*new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
+ 	new RDStationForms('jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7-html', 'UA-47651710-1').createForm();*/
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -108,14 +106,14 @@
 	});
 
 
-	//Menu
+	/*Menu*/
 	$(function(){
 		if ($(window).width() > 768) {
 			var nav = $('header#block-header-site');
 			var navaltura = $(nav).outerHeight();
 			var altura = $(window).height();
 
-			altura = altura - navaltura - 2;  //evita que na seção "vantagens" o menu suma
+			altura = altura - navaltura - 2;  /*evita que na seção "vantagens" o menu suma*/
 
 			$(window).scroll(function() { 
 				if ($(this).scrollTop() > altura) { 
@@ -134,7 +132,7 @@
 		}
 	});
 	
-	//scroll
+	/*Scroll*/
 	$(function(){
 		var elements = $('#block-header-site a, #benefits, .link-logo');
 		elements.click(function(e){
@@ -172,8 +170,8 @@ if (is_page('quem-somos')) { ?>
 </style>
 <?php } ?>
 
-<!-- Código de monitoramento RD -->
-<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/1f43a906-f1a1-427f-bb5d-30ea68ae49f5-loader.js" ></script>
+<!-- Código de monitoramento RD 
+<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/1f43a906-f1a1-427f-bb5d-30ea68ae49f5-loader.js" ></script>-->
 
 <!--Google Analytics-->
 <script>
