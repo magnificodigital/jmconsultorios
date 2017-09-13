@@ -33,7 +33,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url') ?>/galleria/galleria.classic.css">
 <?php endif; ?>
 	
-	<link rel="stylesheet" href="http://magnificodigital.com/assets/createdby/createdby.css">
+	<!--<link rel="stylesheet" href="http://magnificodigital.com/assets/createdby/createdby.css">-->
 	<link rel="shortcut icon" href="<?php bloginfo('template_url') ?>/images/favicon.png">
 
 	<style type="text/css">
