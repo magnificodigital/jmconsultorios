@@ -233,8 +233,3 @@ function mytheme_add_box()
 
 add_action('admin_menu', 'mytheme_add_box');
 add_action('save_post', 'mytheme_save_data');
-
-//fix for cookie error while login.
-setcookie(TEST_COOKIE, 'WP Cookie check', 0, COOKIEPATH, COOKIE_DOMAIN);
-if ( SITECOOKIEPATH != COOKIEPATH )
-    setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);
