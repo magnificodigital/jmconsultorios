@@ -244,17 +244,17 @@ section#home .owl-theme .owl-dots .owl-dot.active span {
 section#home .item {
   display: block;
   position: relative; }
-  section#home .item .bgSlide {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center top;
-    background-blend-mode: multiply;
-    background-color: #0875aa;
-    position: absolute;
-    top: 0; }
-    section#home .item .bgSlide.first {
-      background-blend-mode: normal; }
+section#home .bgSlide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-blend-mode: multiply;
+  background-color: #0875aa;
+  position: absolute;
+  top: 0; }
+  section#home .bgSlide.first {
+    background-blend-mode: normal; }
 
 section#vantagens {
   background: #f8f8f8;
@@ -825,7 +825,7 @@ form button {
   border-bottom: 1px solid #EEE;
   box-sizing: border-box; }
   .content-page .single-post:hover .post-thumbnail {
-    opacity: 0.5; }
+    opacity: 0.85; }
 .content-page .post-content {
   padding: 0 30px;
   min-height: 275px; }
@@ -1330,7 +1330,7 @@ form button {
   margin-top: 15px; }
 
 .page-agendar-consulta {
-  margin-top: 15px; }
+  margin-top: 10px; }
   @media (max-width: 782px) {
     .page-agendar-consulta {
       margin-top: 0; } }
@@ -1353,7 +1353,10 @@ form button {
       font-weight: 300;
       font-size: 24px;
       margin-bottom: 0;
-      margin-top: 0; }
+      padding-left: 10px;
+      margin-top: 0;
+      position: relative;
+      border-left: 3px solid #00b597; }
     #specialists .especilidade p {
       margin-bottom: 0; }
   #specialists .doutor {
@@ -1363,6 +1366,7 @@ form button {
     padding-bottom: 20px;
     max-width: 160px;
     margin: 0 auto;
+    opacity: 1;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -1370,9 +1374,10 @@ form button {
     #specialists .doutor img {
       margin-bottom: 10px; }
     #specialists .doutor:hover {
-      -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.39);
-      -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.39);
-      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.39); }
+      opacity: 0.8;
+      /*-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.39);
+      -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.39);
+      box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.39);*/ }
 
 #exibetelefone {
   cursor: pointer;

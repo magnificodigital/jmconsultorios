@@ -7,6 +7,7 @@ var scripts = [
 	'js/owl.carousel.js',
 	'js/swiper.jquery.js',
 	'js/swiper.js',
+	'js/scrollreveal.js',
 	'js/main.js'
 ];
 var styles = ['css/**.css'];

@@ -25,6 +25,15 @@
 					<?php the_content(); ?>
 				</div>
 
+				<?php 
+
+				$form = get_field('form_rd',get_the_ID()); 
+				if (isset($form) && !empty($form)) : ?>
+					<div class="form-rd">
+						<?php echo $form; ?>
+					</div>
+				<?php endif; ?>
+
 				<div class="tags">
 					<?php the_tags(); ?>
 				</div>

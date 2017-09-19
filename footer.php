@@ -46,18 +46,11 @@
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/owl.carousel.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/swiper.jquery.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/swiper.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/scrollreveal.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/js/main.js"></script>
 <?php else: ?>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/assets/scripts.min.js"></script>
 <?php endif; ?>
-
-<script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
-<script type="text/javascript">
-	new RDStationForms('jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7-html', 'UA-47651710-1').createForm();
-	new RDStationForms('jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5-html', 'UA-47651710-1').createForm();
-	/*new RDStationForms('jm-consultorios-formulario-de-contato-6fcbe42c67f8ac283d2f-html', 'UA-47651710-1').createForm();
- 	new RDStationForms('jm-consultorios-box-newsletter-d0de0f78f2aa58bdfee7-html', 'UA-47651710-1').createForm();*/
-</script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.bloco-telefone').click(function(){
@@ -145,6 +138,23 @@
 		});
 	});
 
+	window.sr = ScrollReveal();
+	sr.reveal('.especilidade', {
+	    origin: 'bottom',
+	    distance: '10px',
+	    duration: 1000,
+	    delay: 0,
+	    opacity: 0,
+	    scale: 1,
+	    easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+	    container: window.document.documentElement,
+	    mobile: true,
+	    reset: false,
+	    useDelay: 'once',
+	    viewFactor: 0.2,
+	    viewOffset: { top: 50, right: 0, bottom: 50, left: 0 },
+	}, 50);
+
 </script>
 
 
@@ -171,9 +181,6 @@ if (is_page('quem-somos')) { ?>
 </style>
 <?php } ?>
 
-<!-- Código de monitoramento RD 
-<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/1f43a906-f1a1-427f-bb5d-30ea68ae49f5-loader.js" ></script>-->
-
 <!--Google Analytics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -185,6 +192,9 @@ if (is_page('quem-somos')) { ?>
   ga('send', 'pageview');
 </script>
 
+<!--Código de monitoramento-->
+<script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/14d82f2d-4490-478a-a646-9c21887909ef-loader.js" ></script>
+
 <?php if (is_page('contato')) { ?>
 <script type="text/javascript">
 	$('#exibetelefone').on('click touchstart', function(){
@@ -193,40 +203,30 @@ if (is_page('quem-somos')) { ?>
 </script>
 <?php } ?>
 
+<?php if (is_page('blog')) : ?>
 <style type="text/css">
-
-	#form-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 *,
-	#form-jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5 * {font-family: 'Open Sans', sans-serif !important;}
-
-	#form-container-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section,
-	#form-container-jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5 #conversion-jm-consultorios-persona-2-contato-c9624debe9d0b7e3f4d5 section {
+	#form-container-persona-2-newsletter-blog-acfacd2c335dc026f16f #conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f section {
 		padding: 0 !important;
 	}
-
-	#conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section input {
-		background: #EEEEEE !important;
-		border-radius: 0;
-		padding: 10px !important;
-		height: inherit !important;
+	@media (min-width: 990px) {
+		#conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f section div.field,
+		#conversion-modal-persona-2-newsletter-blog-acfacd2c335dc026f16f .modal-content section div.actions, #conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f section div.actions {
+			width: 30% !important;
+			float: left !important;
+			margin-right: 5px !important;
+		}
 	}
-
-	#conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.field, #conversion-modal-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 .modal-content section form div.field,
-	#conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions {
-		float: left !important;
-		width: 31% !important;
-		margin-right: 10px !important;
+	#conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f form input, #conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f form select, #conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f form .select2-container, #conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f form textarea {
+		background-color: #EEEEEE !important;
 	}
-	 #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions {
-	 	padding: 0 !important;
-	 }
-
-	 #conversion-modal-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 .modal-content section div.actions .call_button, #conversion-modal-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 .modal-content section div.actions a.call_button, #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions .call_button, #conversion-jm-consultorios-persona-2-box-newsletter-1217c321befd816477b7 section div.actions a.call_button {
- 	    padding: 8px !important;
-    	background: #1dbcaa !important;
-    	font-weight: 400 !important;
-    	text-transform: uppercase !important;
-	 }
+	#conversion-modal-persona-2-newsletter-blog-acfacd2c335dc026f16f .modal-content section div.actions, #conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f section div.actions {
+		padding: 0 !important;
+	}
+	#conversion-persona-2-newsletter-blog-acfacd2c335dc026f16f section div.actions .call_button {
+		padding: 4px !important;
+	}
 </style>
+<?php endif; ?>
 
 </body>
 </html>
