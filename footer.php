@@ -84,9 +84,9 @@
 
 	$(document).ready(function(){
 
-		$('#photos-home .owl-carousel').owlCarousel({
+		$('#fotoshome .owl-carousel').owlCarousel({
 			items: 1,
-			dots: false,
+			dots: true,
 			autoplay: true,
 			autoplayTimeout: 3000,
 			autoplayHoverPause: true,
@@ -138,8 +138,9 @@
 		});
 	});
 
+	
 	window.sr = ScrollReveal();
-	sr.reveal('.especilidade', {
+	sr.reveal('.doctor-wrapper', {
 	    origin: 'bottom',
 	    distance: '10px',
 	    duration: 1000,
