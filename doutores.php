@@ -72,7 +72,7 @@
 
 									<div class="content back">
 										<?php the_content(); ?>
-										<a href="<?php bloginfo('url') ?>/agendar-consulta/" class="agendar">Agendar Consulta</a>
+										<a href="javascript:MostraIframeShospWidgetAgendar();" class="agendar">Agendar Consulta</a>
 									</div>
 
 								</div>

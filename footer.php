@@ -51,6 +51,7 @@
 <?php else: ?>
 <script type="text/javascript" src="<?php bloginfo('template_url') ?>/assets/scripts.min.js"></script>
 <?php endif; ?>
+<!--Start of Shosp Agendamento Online--><script id="s-h-o-s-p" type="text/javascript" src="https://s3-sa-east-1.amazonaws.com/shosp-prd-static/aweb/js/widget.js" data-shosp-hash="b4182bff4b3cf75f9e54f4990f9bd153c0c2973c" data-shosp-texto="Agende sua consulta"></script><!--End of Shosp Agendamento Online-->
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.bloco-telefone').click(function(){

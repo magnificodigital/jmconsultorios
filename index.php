@@ -6,7 +6,7 @@
 			<div class="col-lg-6 col-md-10 col-sm-12 col-xs-12 center-all center-x">
 				<div class="call-to-action animated fadeIn">
 					<h1><strong>Agende suas consultas</strong> de forma simples e rápida</h1>
-					<a href="<?php bloginfo('url') ?>/agendar-consulta/" class="btn btn-site">Agendar consulta agora</a>
+					<a href="javascript:MostraIframeShospWidgetAgendar();" class="btn btn-site">Agendar consulta agora</a>
 					<p>Aqui você agenda sua consulta em 1 minuto!</p>
 				</div>
 			</div>

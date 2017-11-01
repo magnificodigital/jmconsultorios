@@ -1638,12 +1638,13 @@ form button {
       color: #00b597;
       font-size: 18px;
       font-weight: 700;
-      padding: 15px 0;
+      padding: 20px 0;
       margin: 0; }
     #specialists-grid .especialidade img {
       display: table;
       margin: 0 auto;
-      margin-bottom: 10px; }
+      margin-bottom: 20px;
+      border-radius: 50%; }
     #specialists-grid .especialidade .nome {
       margin-top: 10px; }
     #specialists-grid .especialidade .nome,

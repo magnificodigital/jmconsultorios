@@ -3,7 +3,7 @@
 <ul>
 	<li><a href="<?php bloginfo('url'); ?>/quem-somos/">Quem Somos</a></li>
 	<li><a href="<?php bloginfo('url'); ?>/blog/">Dicas para sua saúde</a></li>
-	<li><a href="<?php bloginfo('url'); ?>/agendar-consulta/" class="underline">Agendar Consulta</a></li>
+	<li><a href="javascript:MostraIframeShospWidgetAgendar();" class="underline">Agendar Consulta</a></li>
 	<li><a href="<?php bloginfo('url'); ?>/contato/">Contato</a></li>
 </ul>
 
