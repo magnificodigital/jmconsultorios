@@ -22,7 +22,15 @@
 				</header>
 
 				<div class="content">
-					<?php the_content(); ?>
+					<?php
+						the_content();
+						$form = get_field('form_rd');
+						if (isset($form) && !empty($form)) {
+							echo '<div class="single-form-wrapper">';
+							echo $form;
+							echo '</div>';
+						}
+					?>
 				</div>
 
 				<?php 
