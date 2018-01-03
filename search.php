@@ -15,15 +15,6 @@
 					<section id="posts-blog">
 						<div class="container-fluid">
 
-							<?php $args = array(
-								'orderby' => 'date',
-								'order' => 'DESC',
-								'posts_per_page' => '10',
-								);
-							?>
-							<?php query_posts($args); ?>
-
-
 							<?php if(have_posts()): ?>
 							<?php while(have_posts()):the_post(); ?>
 
