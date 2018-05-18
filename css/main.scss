@@ -1497,6 +1497,7 @@ form button {width: 100%;}
 	bottom: -1px;
 	right: 40px;
 	z-index: 500;
+	display: none;
 
 	&.animated {opacity: 1;}
 	@media (max-width: 543px) {
@@ -1805,4 +1806,17 @@ form button {width: 100%;}
 		margin: 60px auto;
 		display: table;
 	}
+}
+
+#whatsappicon {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: block;
+	outline: none;
+	width: 60px;
+	height: 60px;
+	background: url('../images/icon_whatsapp.svg') no-repeat center;
+	background-size: 100%;
+	z-index: 5;
 }

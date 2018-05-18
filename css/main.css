@@ -487,13 +487,13 @@ section#planos {
     section#planos .living-blocks .block-content ul li p {
       margin-bottom: 5px; }
     section#planos .living-blocks .block:hover .block-content:after {
-      background: transparent; }
+      background: rgba(0, 0, 0, 0); }
     section#planos .living-blocks .block:hover .block-link:after {
-      background: transparent; }
+      background: rgba(0, 0, 0, 0); }
     section#planos .living-blocks .block.active .block-content:after {
-      background: transparent; }
+      background: rgba(0, 0, 0, 0); }
     section#planos .living-blocks .block.active .block-link:after {
-      background: transparent; }
+      background: rgba(0, 0, 0, 0); }
     section#planos .living-blocks .block-content {
       background: #0875aa;
       padding: 30px;
@@ -517,7 +517,7 @@ section#planos {
         -o-transition: 0.3s; }
         @media (max-width: 768px) {
           section#planos .living-blocks .block-content:after {
-            background: transparent; } }
+            background: rgba(0, 0, 0, 0); } }
       section#planos .living-blocks .block-content p {
         font-size: 14px; }
         section#planos .living-blocks .block-content p span {
@@ -558,7 +558,7 @@ section#planos {
         -o-transition: 0.3s; }
         @media (max-width: 768px) {
           section#planos .living-blocks .block-link:after {
-            background: transparent; } }
+            background: rgba(0, 0, 0, 0); } }
 
 section#call-to-action_30days {
   width: 100%;
@@ -1499,7 +1499,8 @@ form button {
   position: fixed;
   bottom: -1px;
   right: 40px;
-  z-index: 500; }
+  z-index: 500;
+  display: none; }
   #doctor-wrapper.animated {
     opacity: 1; }
   @media (max-width: 543px) {
@@ -1765,5 +1766,17 @@ form button {
     color: #0875aa;
     margin: 60px auto;
     display: table; }
+
+#whatsappicon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  outline: none;
+  width: 60px;
+  height: 60px;
+  background: url("../images/icon_whatsapp.svg") no-repeat center;
+  background-size: 100%;
+  z-index: 5; }
 
 /*# sourceMappingURL=main.css.map */

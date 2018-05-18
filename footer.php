@@ -37,6 +37,8 @@
 	</div>
 </div>
 
+<a href="https://api.whatsapp.com/send?phone=5511940703043&text=" id="whatsappicon" target="_blank"></a>
+
 <?php wp_footer(); ?>
 
 <?php if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) : ?>
